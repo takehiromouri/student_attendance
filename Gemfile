@@ -34,6 +34,8 @@ gem 'rails_12factor', group: [:production]
 
 gem 'foundation-rails'
 
+gem 'rails-controller-testing' 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
