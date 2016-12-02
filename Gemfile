@@ -36,6 +36,8 @@ gem 'foundation-rails'
 
 gem 'rails-controller-testing' 
 
+gem 'react-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,0 +1,35 @@
+<h3>生徒登録</h3>
+
+<%= simple_form_for @student, url: admin_students_path, method: :post do |f| %>
+	<div class="row">
+		<div class="large-6 small-12 columns">
+			<%= f.input :last_name, placeholder: '名' %>
+		</div>
+
+		<div class="large-6 small-12 columns">
+			<%= f.input :last_name_hiragana, placeholder: '名（ひらがな）' %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-6 small-12 columns">
+			<%= f.input :first_name, placeholder: '氏' %>
+		</div>
+		<div class="large-6 small-12 columns">
+			<%= f.input :first_name_hiragana, placeholder: '氏（ひらがな）' %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-6 small-12 columns">
+			<%= f.input :phone, placeholder: '000-000-0000' %>
+		</div>
+
+		<div class="large-6 small-12 columns">
+			<%= f.input :student_number, placeholder: '000000' %>
+		</div>
+	</div>
+
+	<%= f.submit class: 'button float-right' %>
+
+<% end %>

@@ -1,6 +1,10 @@
 class Admin::StudentsController < ApplicationController
 	before_action :ensure_admin
 
+	def index
+		
+	end
+
 	def new
 		@student = Student.new
 	end
@@ -9,10 +13,10 @@ class Admin::StudentsController < ApplicationController
 		@student = Student.new(student_params)
 
 		if @student.save
-			flash[:success] = "Success!"
+			flash[:success] = "生徒が作成されました。"
 			redirect_to root_path
 		else
-			flash[:alert] = "Error!"
+			flash[:alert] = @student.errors.full_messages[0]
 			render :new
 		end
 	end
@@ -20,7 +24,7 @@ class Admin::StudentsController < ApplicationController
 	private
 
 	def student_params
-		params.require(:student).permit(:first_name, :last_name, :first_name_hiragana, :last_name_hiragana, :email, :password, :password_confirmation, :phone)
+		params.require(:student).permit(:first_name, :last_name, :first_name_hiragana, :last_name_hiragana, :phone, :student_number)
 	end
 
 	def ensure_admin

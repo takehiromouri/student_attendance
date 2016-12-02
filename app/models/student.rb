@@ -1,8 +1,3 @@
 class Student < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  validates :first_name, :last_name, :first_name_hiragana, :last_name_hiragana, presence: true
+	validates :first_name, :first_name_hiragana, :last_name, :last_name_hiragana, :student_number, presence: true
 end
