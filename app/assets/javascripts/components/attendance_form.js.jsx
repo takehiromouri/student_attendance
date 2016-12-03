@@ -30,7 +30,11 @@ let AttendanceForm = React.createClass({
 				success: (data) => {
 					let studentName = data.student.last_name + data.student.first_name
 					this.setState({record: data.record, studentName: studentName});
-					$('#result').foundation('open');			
+					$('#result').foundation('open');	
+					setTimeout(() => {
+						$('#result').foundation('close');
+					}, 2000);
+
 				}
 			})
 		}
