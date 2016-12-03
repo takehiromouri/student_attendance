@@ -16,22 +16,26 @@ let AttendanceForm = React.createClass({
 	handleSubmit(e){
 		e.preventDefault();
 
-		$.ajax({
-			url: "/attendance_records",
-			type: "POST",
-			dataType: "JSON",
-			context: "this",
-			data: {
-			 attendance_record: {
-			 	student_number: this.state.studentNumber 
-			 }
-			},
-			success: (data) => {
-				let studentName = data.student.last_name + data.student.first_name
-				this.setState({record: data.record, studentName: studentName});
-				$('#result').foundation('open');			
-			}
-		})
+		if (confirm(`生徒番号${this.state.studentNumber}でお間違いないでしょうか？`)) {
+			$.ajax({
+				url: "/attendance_records",
+				type: "POST",
+				dataType: "JSON",
+				context: "this",
+				data: {
+				 attendance_record: {
+				 	student_number: this.state.studentNumber 
+				 }
+				},
+				success: (data) => {
+					let studentName = data.student.last_name + data.student.first_name
+					this.setState({record: data.record, studentName: studentName});
+					$('#result').foundation('open');			
+				}
+			})
+		}
+
+		
 	},
 
 	handleUpdate(number){

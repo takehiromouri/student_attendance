@@ -14,6 +14,6 @@ class StudentDecorator < Draper::Decorator
   end
 
   def last_record
-  	object.attendance_records.last.created_at.strftime("%m/%d/%Y %l:%M %p")
+  	object.last_attendance_record.created_at.strftime("%m/%d/%Y %l:%M %p")
   end
 end
