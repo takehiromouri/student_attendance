@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :students
+  
+  resources :attendance_records
+
+  resources :admin_dashboard, only: :index
 
   get 'search', to: 'static_pages#search' 
 end

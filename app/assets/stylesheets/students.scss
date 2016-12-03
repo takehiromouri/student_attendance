@@ -1,0 +1,11 @@
+.student-panel {
+	padding: 20px;
+	background: whitesmoke;
+	position: relative;
+
+	.btn-delete {
+		position: absolute;
+		bottom: 0px;
+		right: 20px;
+	}
+}

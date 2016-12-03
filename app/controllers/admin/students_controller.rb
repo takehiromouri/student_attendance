@@ -25,11 +25,5 @@ class Admin::StudentsController < ApplicationController
 
 	def student_params
 		params.require(:student).permit(:first_name, :last_name, :first_name_hiragana, :last_name_hiragana, :phone, :student_number)
-	end
-
-	def ensure_admin
-		return if admin_signed_in?
-		flash[:alert] = "You're not authorized"
-		redirect_to root_path
-	end
+	end	
 end

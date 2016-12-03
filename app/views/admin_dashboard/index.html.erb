@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="medium-8 medium-offset-2 small-12 columns">
+		<ul class="tabs" data-tabs id="student-tabs">
+		  <li class="tabs-title is-active"><a href="#first_week" aria-selected="true">1週間</a></li>
+		  <li class="tabs-title"><a href="#second_week">2週間</a></li>
+		  <li class="tabs-title"><a href="#third_week">3週間</a></li>
+		  <li class="tabs-title"><a href="#fourth_week">4週間</a></li>
+		</ul>
+
+		<div class="tabs-content" data-tabs-content="student-tabs">
+		  <div class="tabs-panel is-active" id="first_week">
+		  	<ul class="no-bullet">
+		  		<%= render partial: 'student', collection: @students.unattended_for(weeks: 1) %>
+		    </ul>
+		  </div>
+
+		  <div class="tabs-panel" id="second_week">
+		    <ul class="no-bullet">
+			    <% @students.unattended_for(weeks: 2).each do |student| %>
+			    	<li>student.last_name + student.first_name</li>
+			    <% end %>
+		    </ul>
+		  </div>
+
+		  <div class="tabs-panel" id="third_week">
+		    <ul class="no-bullet">
+			    <% @students.unattended_for(weeks: 3).each do |student| %>
+			    	<li>student.last_name + student.first_name</li>
+			    <% end %>
+		    </ul>
+		  </div>
+
+		  <div class="tabs-panel" id="fourth_week">
+		    <ul>
+			    <% @students.unattended_for(weeks: 4).each do |student| %>
+			    	<li>student.last_name + student.first_name</li>
+			    <% end %>
+		    </ul>
+		  </div>
+		</div>
+
+	</div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202095426) do
+ActiveRecord::Schema.define(version: 20161203032414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 20161202095426) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "attendance_records", force: :cascade do |t|
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_attendance_records_on_student_id", using: :btree
+  end
+
   create_table "students", force: :cascade do |t|
     t.string   "student_number"
     t.string   "phone"
@@ -48,4 +55,5 @@ ActiveRecord::Schema.define(version: 20161202095426) do
     t.index ["student_number"], name: "index_students_on_student_number", using: :btree
   end
 
+  add_foreign_key "attendance_records", "students"
 end

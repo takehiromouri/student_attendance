@@ -38,6 +38,10 @@ gem 'rails-controller-testing'
 
 gem 'react-rails'
 
+# Draper gem for decorator
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: 'drapergem/draper'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

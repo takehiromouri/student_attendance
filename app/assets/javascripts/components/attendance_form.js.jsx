@@ -1,7 +1,9 @@
 let AttendanceForm = React.createClass({
 	getInitialState() {
 		return {
-			studentNumber: ""
+			studentNumber: "",
+			studentName: "",
+			record: ""
 		}
 	},
 
@@ -14,7 +16,22 @@ let AttendanceForm = React.createClass({
 	handleSubmit(e){
 		e.preventDefault();
 
-
+		$.ajax({
+			url: "/attendance_records",
+			type: "POST",
+			dataType: "JSON",
+			context: "this",
+			data: {
+			 attendance_record: {
+			 	student_number: this.state.studentNumber 
+			 }
+			},
+			success: (data) => {
+				let studentName = data.student.last_name + data.student.first_name
+				this.setState({record: data.record, studentName: studentName});
+				$('#result').foundation('open');			
+			}
+		})
 	},
 
 	handleUpdate(number){
@@ -52,6 +69,8 @@ let AttendanceForm = React.createClass({
 				</form>
 
 				<AttendanceFormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar}/>
+
+				<Result studentName={this.state.studentName} record={this.state.record} />
 			</div>
 		)
 	}
