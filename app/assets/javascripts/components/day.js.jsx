@@ -11,7 +11,7 @@ let Day = React.createClass({
 
 	attended(){
 		let result = this.props.attendanceRecords.find((record) => {
-			return record.created_at_date == `${this.props.month}/${this.props.date}/${this.props.year}`
+			return record.created_at_date == `${this.props.month + 1}/${this.props.date}/${this.props.year}`
 		})
 
 		if (result) {

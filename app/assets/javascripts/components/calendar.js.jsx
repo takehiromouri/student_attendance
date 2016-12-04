@@ -14,8 +14,14 @@ let Calendar = React.createClass({
 
   days(){
     let days = [];
-    for (let i = 1; i <= this.lastDay(); i++) {      
-      days.push(<Day key={i} date={i} year={this.state.year} month={this.state.month} attendanceRecords={this.props.attendanceRecords}/>)
+    for (let i = 1; i <= this.lastDay(); i++) { 
+      let date = (i.toString().length == 1) ? `0${i}` : i;
+
+      days.push(<Day key={i} 
+                     date={date} 
+                     year={this.state.year} 
+                     month={this.state.month} 
+                     attendanceRecords={this.props.attendanceRecords}/>)
     }
 
     return days;
