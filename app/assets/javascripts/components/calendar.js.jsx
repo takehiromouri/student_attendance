@@ -50,10 +50,12 @@ let Calendar = React.createClass({
   render(){
     return (
       <div>
-        <div>
-          <h3 className="text-center">{this.state.month + 1}月 {this.state.year}</h3>
-          <button onClick={this.decrementMonth}>Back</button>
-          <button onClick={this.incrementMonth}>Next</button>
+        <div className="calendar-heading">
+          <h3 className="text-center">
+            <button onClick={this.decrementMonth} className="button btn-back">前</button>
+            {this.state.month + 1}月 {this.state.year}
+            <button onClick={this.incrementMonth} className="button btn-next">次</button>
+          </h3>        
         </div>
         <table>
           <thead>       
