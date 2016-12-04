@@ -14,7 +14,7 @@ let SearchForm = React.createClass({
 		e.preventDefault();
 
 		$.ajax({
-			url: '/students',
+			url: '/students.json',
 			type: 'GET',
 			dataType: 'JSON',
 			context: 'this',

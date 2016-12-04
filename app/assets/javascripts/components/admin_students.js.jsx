@@ -1,20 +1,20 @@
 let AdminStudents = React.createClass({
 	getInitialState() {
 		return {
-			students: [],
+			student: {},
 			searched: false
 		};		
 	},
 
 	handleSubmit(data){
-		this.setState({students: data, searched: true})
+		this.setState({student: data, searched: true})
 	},
 
 	render(){
 		return (
 			<div>
 				<SearchForm handleSubmit={this.handleSubmit}/>
-				<AdminSearchResults students={this.state.students} searched={this.state.searched}/>
+				<AdminSearchResults student={this.state.student} searched={this.state.searched}/>
 			</div>
 		)
 	}

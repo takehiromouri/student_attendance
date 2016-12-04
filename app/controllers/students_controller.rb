@@ -1,11 +1,15 @@
 class StudentsController < ApplicationController
 	def index
 		if params[:student_number]
-			@students = Student.where(student_number: params[:student_number]) 
-		end
+			@student = Student.includes(:attendance_records).find_by(student_number: params[:student_number])											  
+											  .try(:decorate)
 
-		respond_to do |format|
-			format.json { render json: @students }
-		end	
+			if @student.nil?
+				respond_to do |format|
+					format.json { render json: {} }
+				end
+			end
+			
+		end
 	end
 end

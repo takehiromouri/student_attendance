@@ -12,6 +12,7 @@
         <li class="menu-text"><%= link_to '生徒登録', new_admin_student_path %></li>
         <li class="menu-text"><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
       <% else %>
+        <li class="menu-text"><%= link_to '検索する', search_path %></li>
         <li class="menu-text"><%= link_to '管理者ログイン', new_admin_session_path %></li>        
       <% end %>
     </ul>

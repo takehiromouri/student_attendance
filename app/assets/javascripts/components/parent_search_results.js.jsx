@@ -1,18 +1,11 @@
 let ParentSearchResults = React.createClass({
-	students(){
-		if (this.props.students.length == 0 && this.props.searched) {
+	student(){
+		if ($.isEmptyObject(this.props.student) && this.props.searched) {
 			return (
 				<h3 className="text-center">生徒が見つかりませんでした。</h3>
 			)
-		} else {
-			let students = this.props.students.map((student) => {
-				return (
-					<ParentStudent key={student.id}
-									 student={student} />
-				)
-			});
-
-			return students;
+		} else if ($.isEmptyObject(this.props.student) == false) {
+			return <ParentStudent student={this.props.student} />
 		}
 		
 	},
@@ -22,7 +15,7 @@ let ParentSearchResults = React.createClass({
 
 		return (
 			<div>
-				{this.students()}
+				{this.student()}
 			</div>
 		)
 	}
