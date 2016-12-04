@@ -16,9 +16,9 @@ RSpec.describe AttendanceRecordsController, type: :controller do
 			it "does not create a new attendance record" do 
 				student = FactoryGirl.create(:student, student_number: "12345")
 
-				expect {
-					post :create, attendance_record: {student_number: "01234"}, format: :json
-				}.to change(AttendanceRecord, :count).by(0)
+				post :create, attendance_record: {student_number: "01234"}, format: :json
+				
+				expect(response.status).to eq 500
 			end
 		end
 	end

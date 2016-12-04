@@ -3,7 +3,8 @@ let AttendanceForm = React.createClass({
 		return {
 			studentNumber: "",
 			studentName: "",
-			record: ""
+			record: "",
+			error: false
 		}
 	},
 
@@ -29,12 +30,14 @@ let AttendanceForm = React.createClass({
 				},
 				success: (data) => {
 					let studentName = data.student.last_name + data.student.first_name
-					this.setState({record: data.record, studentName: studentName});
+					this.setState({record: data.record, studentName: studentName, error: false});
 					$('#result').foundation('open');	
 					setTimeout(() => {
 						$('#result').foundation('close');
 					}, 2000);
-
+				},
+				error: () => {
+					this.setState({error: true});
 				}
 			})
 		}
@@ -53,8 +56,15 @@ let AttendanceForm = React.createClass({
 	},
 
 	render(){
+		let errorMessage;
+		if (this.state.error) {
+			errorMessage = <ErrorMessage message={`生徒が見つかりませんでした。`} />
+		}
+
 		return (
 			<div>
+				{errorMessage}
+
 				<form>
 				  <div className="row">
 				    <div className="medium-6 medium-offset-3 small-12 columns">			      

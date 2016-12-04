@@ -8,7 +8,7 @@ class Student < ApplicationRecord
 		if weeks < 4
 			joins(:attendance_records)	
 		 .where('attendance_records.created_at = (SELECT MAX(attendance_records.created_at) FROM attendance_records WHERE attendance_records.student_id = students.id)')
-		 .where(attendance_records: {created_at: weeks.weeks.ago.beginning_of_week..(weeks-1).weeks.ago.beginning_of_week})
+		 .where(attendance_records: {created_at: (weeks+1).weeks.ago..(weeks).weeks.ago})		 
 		else
 			joins(:attendance_records)
 		 .where('attendance_records.created_at = (SELECT MAX(attendance_records.created_at) FROM attendance_records WHERE attendance_records.student_id = students.id)')

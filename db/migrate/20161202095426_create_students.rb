@@ -1,6 +1,6 @@
 class CreateStudents < ActiveRecord::Migration[5.0]
   def change
-    drop_table :students
+    drop_table :students if table_exists? :students
     create_table :students do |t|
       t.string :student_number
       t.string :phone
