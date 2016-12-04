@@ -4,5 +4,10 @@
 	td:hover {
 		background: #2199e8;
     color: white;
+
+    transition: all 700ms ease;
+	  -webkit-transition: all 700ms ease;
+	  -moz-transition: all 700ms ease;
+	  -o-transition: all 700ms ease;
 	}
 }
