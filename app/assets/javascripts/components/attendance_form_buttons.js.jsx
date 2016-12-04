@@ -13,7 +13,7 @@ let AttendanceFormButtons = React.createClass({
 		return (
 			<div className="row">
 				<div className="medium-6 medium-offset-3 small-12 columns">
-					<table>
+					<table className="attendance-form">
 						<tbody>
 							<tr>
 								<td onClick={this.handleUpdate}>1</td>
