@@ -1,5 +1,19 @@
+@import "mixins";
+
 .top-bar {
 	border-bottom: 3px solid #f7f7f7;
+
+	a {
+		border-bottom: 2px solid transparent;
+
+		@include transition(all);
+	}
+
+	a:hover {
+		border-bottom: 2px solid #2199e8;
+
+		@include transition(all);
+	}
 }
 
 .top-bar, .top-bar ul {
@@ -9,3 +23,4 @@
 .brand {
 	height: 50px;
 }
+

@@ -1,4 +1,4 @@
-let AttendanceFormButtons = React.createClass({
+let FormButtons = React.createClass({
 	handleUpdate(e){
 		let number = $(e.target).text();
 

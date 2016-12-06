@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
   resources :admin_dashboard, only: :index
 
+  post :authentication, to: "authentications#create"
+
   get 'search', to: 'static_pages#search' 
 end

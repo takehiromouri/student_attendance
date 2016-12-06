@@ -4,9 +4,15 @@ let AttendanceForm = React.createClass({
 			studentNumber: "",
 			studentName: "",
 			record: "",
+			authenticated: false,
 			error: false,
 			errorMessage: ''
 		}
+	},
+
+	componentDidMount() {
+		$('#result').foundation();
+		$('#confirmation').foundation();
 	},
 
 	handleChange(e){
@@ -60,7 +66,7 @@ let AttendanceForm = React.createClass({
 			},
 			success: (data) => {
 				let studentName = data.student.last_name + data.student.first_name
-				this.setState({record: data.record, studentName: studentName, error: false});
+				this.setState({record: data.record, studentName: studentName, error: false});				
 
 				setTimeout(() => {
 					$('#result').foundation('open');	
@@ -80,16 +86,20 @@ let AttendanceForm = React.createClass({
 		$('#confirmation').foundation('close');	
 	},
 
+	handleClose(){
+		this.setState({error: false});
+	},	
+
 	render(){
 		let errorMessage;
 		if (this.state.error) {
-			errorMessage = <ErrorMessage message={this.state.errorMessage} />
+			errorMessage = <ErrorMessage message={this.state.errorMessage} handleClose={this.handleClose} />
 		}
 
 		return (
 			<div>
 				{errorMessage}
-
+				
 				<form>
 				  <div className="row">
 				    <div className="medium-4 medium-offset-4 small-12 columns">			      
@@ -111,7 +121,7 @@ let AttendanceForm = React.createClass({
 				  </div>
 				</form>
 
-				<AttendanceFormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar}/>
+				<FormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar}/>
 
 				<Result studentName={this.state.studentName} record={this.state.record} />
 
