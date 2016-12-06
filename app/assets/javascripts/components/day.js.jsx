@@ -15,7 +15,11 @@ let Day = React.createClass({
 		})
 
 		if (result) {
-			return result.created_at_time;
+			return (
+				<div>
+					<i className="fi-check"></i>{result.created_at_time}
+				</div>
+			)
 		}
 		
 	},
