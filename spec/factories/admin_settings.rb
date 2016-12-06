@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :admin_setting do
-    password "MyString"
-    footer_text "MyText"
+    password 12345
+    footer_text "Footer Text"
   end
 end

@@ -6,9 +6,9 @@ RSpec.describe Student, type: :model do
 			it "returns students that have no attended for atleast a week but less than 2 weeks" do
 				student_1 = FactoryGirl.create(:student) 
 				student_2 = FactoryGirl.create(:student)
-				FactoryGirl.create(:attendance_record, student_id: student_1.id, created_at: 9.days.ago)
-				FactoryGirl.create(:attendance_record, student_id: student_2.id)
-				FactoryGirl.create(:attendance_record, student_id: student_2.id, created_at: 9.days.ago)
+				FactoryGirl.build(:attendance_record, student_id: student_1.id, created_at: 9.days.ago).save
+				FactoryGirl.build(:attendance_record, student_id: student_2.id).save
+				FactoryGirl.build(:attendance_record, student_id: student_2.id, created_at: 9.days.ago).save
 
 				expect(Student.unattended_for(weeks: 1)).to eq([student_1])
 			end
@@ -19,10 +19,10 @@ RSpec.describe Student, type: :model do
 				student_1 = FactoryGirl.create(:student) 
 				student_2 = FactoryGirl.create(:student)
 				student_3 = FactoryGirl.create(:student)
-				FactoryGirl.create(:attendance_record, student_id: student_1.id, created_at: 15.days.ago)
-				FactoryGirl.create(:attendance_record, student_id: student_2.id, created_at: 22.days.ago)
-				FactoryGirl.create(:attendance_record, student_id: student_2.id)
-				FactoryGirl.create(:attendance_record, student_id: student_3.id, created_at: 22.days.ago)
+				FactoryGirl.build(:attendance_record, student_id: student_1.id, created_at: 15.days.ago).save
+				FactoryGirl.build(:attendance_record, student_id: student_2.id, created_at: 22.days.ago).save
+				FactoryGirl.build(:attendance_record, student_id: student_2.id).save
+				FactoryGirl.build(:attendance_record, student_id: student_3.id, created_at: 22.days.ago).save
 
 				expect(Student.unattended_for(weeks: 2)).to eq([student_1])
 			end
@@ -33,10 +33,10 @@ RSpec.describe Student, type: :model do
 				student_1 = FactoryGirl.create(:student) 
 				student_2 = FactoryGirl.create(:student)
 				student_3 = FactoryGirl.create(:student)
-				FactoryGirl.create(:attendance_record, student_id: student_1.id, created_at: 22.days.ago)
-				FactoryGirl.create(:attendance_record, student_id: student_2.id)
-				FactoryGirl.create(:attendance_record, student_id: student_2.id, created_at: 22.days.ago)
-				FactoryGirl.create(:attendance_record, student_id: student_3.id, created_at: 33.days.ago)				
+				FactoryGirl.build(:attendance_record, student_id: student_1.id, created_at: 22.days.ago).save
+				FactoryGirl.build(:attendance_record, student_id: student_2.id).save
+				FactoryGirl.build(:attendance_record, student_id: student_2.id, created_at: 22.days.ago).save
+				FactoryGirl.build(:attendance_record, student_id: student_3.id, created_at: 33.days.ago)				.save
 
 				expect(Student.unattended_for(weeks: 3)).to eq([student_1])
 			end
@@ -47,10 +47,10 @@ RSpec.describe Student, type: :model do
 				student_1 = FactoryGirl.create(:student) 
 				student_2 = FactoryGirl.create(:student)
 				student_3 = FactoryGirl.create(:student)
-				FactoryGirl.create(:attendance_record, student_id: student_1.id, created_at: 60.days.ago)
-				FactoryGirl.create(:attendance_record, student_id: student_2.id, created_at: 29.days.ago)
-				FactoryGirl.create(:attendance_record, student_id: student_3.id)
-				FactoryGirl.create(:attendance_record, student_id: student_3.id, created_at: 60.days.ago)
+				FactoryGirl.build(:attendance_record, student_id: student_1.id, created_at: 60.days.ago).save
+				FactoryGirl.build(:attendance_record, student_id: student_2.id, created_at: 29.days.ago).save
+				FactoryGirl.build(:attendance_record, student_id: student_3.id).save
+				FactoryGirl.build(:attendance_record, student_id: student_3.id, created_at: 60.days.ago).save
 
 				expect(Student.unattended_for(weeks: 4)).to eq([student_1])
 			end
