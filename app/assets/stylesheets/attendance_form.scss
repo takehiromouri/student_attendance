@@ -1,13 +1,36 @@
 .attendance-form {
 	cursor: pointer;
+	border-collapse: separate;
+  border-spacing: 15px;
 
-	td:hover {
-		background: #2199e8;
-    color: white;
+  td {
+  	background: #333;
+    color: white;    
+    box-shadow: 1px 4px 8px #777;
+    border-radius: 2px;
+    position: relative;
+    text-align: center;
+    width: 33.33%;
+    padding-bottom: 22%;
+    height: 0;  	
 
     transition: all 700ms ease;
 	  -webkit-transition: all 700ms ease;
 	  -moz-transition: all 700ms ease;
 	  -o-transition: all 700ms ease;
+  }
+
+	td:hover {
+		background: #2199e8;
+    color: white;    
+
+    transition: all 700ms ease;
+	  -webkit-transition: all 700ms ease;
+	  -moz-transition: all 700ms ease;
+	  -o-transition: all 700ms ease;
+	}
+
+	.number {
+		position: absolute;
 	}
 }

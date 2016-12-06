@@ -1,11 +1,26 @@
+$footer-height: 60px;
+
 html, body {
-	font-family: "Mplus 1p";
+	font-family: "Mplus 1p";		
+}
+
+#wrap {
+	min-height: 100%;
 	position: relative;
+	padding-bottom: $footer-height;
+}
+
+a {
+	font-weight: 400;
 }
 
 .footer {
+	background: #333333;
+	color: #a3a3a3;
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
 	left: 0px;
+	padding-top: 15px;
+	height: $footer-height;
 }

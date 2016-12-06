@@ -12,30 +12,30 @@ let AttendanceFormButtons = React.createClass({
 	render(){
 		return (
 			<div className="row">
-				<div className="medium-6 medium-offset-3 small-12 columns">
+				<div className="medium-4 medium-offset-4 small-12 columns">
 					<table className="attendance-form">
 						<tbody>
 							<tr>
-								<td onClick={this.handleUpdate}>1</td>
-								<td onClick={this.handleUpdate}>2</td>
-								<td onClick={this.handleUpdate}>3</td>
+								<td onClick={this.handleUpdate}><div className="number">1</div></td>
+								<td onClick={this.handleUpdate}><div className="number">2</div></td>
+								<td onClick={this.handleUpdate}><div className="number">3</div></td>
 							</tr>
 
 							<tr>
-								<td onClick={this.handleUpdate}>4</td>
-								<td onClick={this.handleUpdate}>5</td>
-								<td onClick={this.handleUpdate}>6</td>
+								<td onClick={this.handleUpdate}><div className="number">4</div></td>
+								<td onClick={this.handleUpdate}><div className="number">5</div></td>
+								<td onClick={this.handleUpdate}><div className="number">6</div></td>
 							</tr>
 
 							<tr>
-								<td onClick={this.handleUpdate}>7</td>
-								<td onClick={this.handleUpdate}>8</td>
-								<td onClick={this.handleUpdate}>9</td>
+								<td onClick={this.handleUpdate}><div className="number">7</div></td>
+								<td onClick={this.handleUpdate}><div className="number">8</div></td>
+								<td onClick={this.handleUpdate}><div className="number">9</div></td>
 							</tr>
 
 							<tr>
-								<td onClick={this.handleUpdate}>0</td>						
-								<td onClick={this.handleDeleteChar}>消</td>
+								<td onClick={this.handleUpdate}><div className="number">0</div></td>						
+								<td onClick={this.handleDeleteChar}><div className="number">消</div></td>
 							</tr>
 						</tbody>
 					</table>
