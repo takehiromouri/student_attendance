@@ -4,7 +4,8 @@ let AttendanceForm = React.createClass({
 			studentNumber: "",
 			studentName: "",
 			record: "",
-			error: false
+			error: false,
+			errorMessage: ''
 		}
 	},
 
@@ -36,8 +37,8 @@ let AttendanceForm = React.createClass({
 						$('#result').foundation('close');
 					}, 2000);
 				},
-				error: () => {
-					this.setState({error: true});
+				error: (request, status, error) => {										
+					this.setState({error: true, errorMessage: request.responseText});
 				}
 			})
 		}
@@ -58,7 +59,7 @@ let AttendanceForm = React.createClass({
 	render(){
 		let errorMessage;
 		if (this.state.error) {
-			errorMessage = <ErrorMessage message={`生徒が見つかりませんでした。`} />
+			errorMessage = <ErrorMessage message={this.state.errorMessage} />
 		}
 
 		return (

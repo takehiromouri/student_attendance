@@ -18,7 +18,9 @@ ja:
         last_name_hiragana: 名（ひらがな）
         email: メールアドレス
         password: パスワード
-        password_confirmation: パスワード（再確認）        
+        password_confirmation: パスワード（再確認） 
+      attendance_record:
+        student: 生徒       
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

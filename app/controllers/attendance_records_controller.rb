@@ -2,20 +2,28 @@ class AttendanceRecordsController < ApplicationController
 	def create
 		@student = Student.find_by_student_number(attendance_record_params[:student_number])
 
-		if @student.present?
-			@student.attendance_records.create
-			respond_to do |format|
-				format.json { render json: { record: @student.attendance_records.this_month.count, student: @student } }
-			end
-		else
-			respond_to do |format|
-				format.json { render json: :no_head, status: 500 }
-			end
-		end
-		
+		return error_response("生徒が見つかりませんでした。") if @student.nil?
+
+		attendance_record = @student.attendance_records.new
+	
+		return success_response if attendance_record.save
+
+		error_response(attendance_record.errors.full_messages[0])
 	end
 
 	private
+
+	def success_response
+		respond_to do |format|
+			format.json { render json: { record: @student.attendance_records.this_month.count, student: @student } }
+		end	
+	end
+
+	def error_response(error="エラーが起きました。")
+		respond_to do |format|
+			format.json { render json: error, status: 500 }
+		end
+	end
 
 	def attendance_record_params
 		params.require(:attendance_record).permit(:student_number)
