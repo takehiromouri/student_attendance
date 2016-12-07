@@ -4,7 +4,7 @@ let AdminStudent = React.createClass({
 			<div>
 				<h2>{this.props.student.name}</h2>
 				<p><strong>生徒番号</strong> {this.props.student.student_number}</p>
-				<p><strong>電話番号</strong> <a href={`tel:${this.props.student.phone}`} target="_blank">{this.props.student.phone}</a></p>
+				<p><i className="fi-telephone"></i> <a href={`tel:${this.props.student.phone}`} target="_blank">{this.props.student.phone}</a></p>
 
 				<hr/>
 
