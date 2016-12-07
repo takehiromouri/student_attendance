@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   resources :admin_dashboard, only: :index
 
+  get :admin_setting, to: "admin_settings#edit"
+  patch :admin_settings, to: "admin_settings#update"
+
   post :authentication, to: "authentications#create"
 
   get 'search', to: 'static_pages#search'   

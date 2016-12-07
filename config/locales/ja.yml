@@ -3,6 +3,7 @@ ja:
     models:      
       student: 生徒
       admin: 管理者
+      admin_setting: 設定
     attributes:
       student:
         first_name: 氏
@@ -20,7 +21,10 @@ ja:
         password: パスワード
         password_confirmation: パスワード（再確認） 
       attendance_record:
-        student: 生徒       
+        student: 生徒  
+      admin_setting:
+        password: パスワード
+        footer_text: フッターテキスト     
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
