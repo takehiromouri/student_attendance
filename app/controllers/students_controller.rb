@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
 
 			if @student.nil?
 				respond_to do |format|
-					format.json { render json: "生徒が見つかりませんでした。", status: 500 }
+					format.json { render json: "#{params[:student_number]}は見つかりませんでした。", status: 500 }
 				end
 			end
 			

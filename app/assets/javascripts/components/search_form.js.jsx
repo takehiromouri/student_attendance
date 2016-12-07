@@ -12,6 +12,10 @@ let SearchForm = React.createClass({
 		this.setState({student_number: student_number});
 	},
 
+	handleClose(){
+		this.setState({error: false});
+	},
+
 	handleSubmit(e){		
 		e.preventDefault();
 
