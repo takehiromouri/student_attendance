@@ -121,7 +121,7 @@ let AttendanceForm = React.createClass({
 				  </div>
 				</form>
 
-				<FormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar}/>
+				<FormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar} handleSubmit={this.handleSubmit}/>
 
 				<Result studentName={this.state.studentName} record={this.state.record} />
 

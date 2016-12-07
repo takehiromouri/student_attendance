@@ -6,9 +6,7 @@ class AttendanceRecord < ApplicationRecord
 
 	validate :daily_limit
 
-	private
-
-	##### asdasdasdasdads
+	private	
 
 	def daily_limit
 		if student.attendance_records.created_today.any?

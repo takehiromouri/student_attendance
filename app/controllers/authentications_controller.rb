@@ -1,7 +1,7 @@
 class AuthenticationsController < ApplicationController
 	def create
 
-		if authentication_params[:password] == password
+		if authenticated?
 
 			set_authenticated!
 
@@ -16,6 +16,10 @@ class AuthenticationsController < ApplicationController
 	end
 
 	private
+
+	def authenticated?
+		authentication_params[:password] == password
+	end	
 
 	def set_authenticated!
 		session[:authenticated] = true

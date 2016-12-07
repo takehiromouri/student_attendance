@@ -6,9 +6,9 @@ class AttendanceRecordsController < ApplicationController
 
 		attendance_record = @student.attendance_records.new
 	
-		return success_response if attendance_record.save
+		attendance_record.save		
 
-		error_response(attendance_record.errors.full_messages[0])
+		success_response
 	end
 
 	private
