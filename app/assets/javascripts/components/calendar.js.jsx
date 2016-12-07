@@ -57,7 +57,7 @@ let Calendar = React.createClass({
             <button onClick={this.incrementMonth} className="button btn-next">次</button>
           </h3>        
         </div>
-        <table>
+        <table className="responsive">
           <thead>       
             <tr>
               <th>日付</th>

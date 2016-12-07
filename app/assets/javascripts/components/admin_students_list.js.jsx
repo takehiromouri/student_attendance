@@ -41,7 +41,7 @@ let AdminStudentsList = React.createClass({
 	students(){
 		return this.state.students.map((student) => {
 			return (
-				<tr>
+				<tr key={student.id}>
 					<td>{student.student_number}</td>
 					<td>{student.name}</td>					
 					<td><a href={`tel:${student.phone}`} target="_blank">{student.phone}</a></td>
@@ -68,7 +68,7 @@ let AdminStudentsList = React.createClass({
 			return (
 				<div>
 					<h3>生徒一覧</h3>
-					<table>
+					<table className="responsive">
 						<thead>
 							<tr>
 								<th>生徒番号</th>
