@@ -9,6 +9,7 @@ RSpec.describe AuthenticationsController, type: :controller do
 				post :create, authentication: {password: 12345}, format: :json
 
 				expect(response.status).to eq(200)
+				expect(session[:authenticated]).to eq(true)
 			end
 		end
 

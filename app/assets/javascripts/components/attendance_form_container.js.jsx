@@ -1,7 +1,7 @@
 let AttendanceFormContainer = React.createClass({
 	getInitialState() {
 		return {			
-			authenticated: false,			
+			authenticated: this.props.authenticated
 		}
 	},
 
