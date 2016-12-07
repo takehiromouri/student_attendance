@@ -8,6 +8,8 @@ class AttendanceRecord < ApplicationRecord
 
 	private
 
+	##### asdasdasdasdads
+
 	def daily_limit
 		if student.attendance_records.created_today.any?
 			errors.add(:student, "は本日すでに出席しています。")
