@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   authenticated :admin do
-    root 'admin/students#index', as: :authenticated_root
+    root 'admin/students#search', as: :authenticated_root
   end
 
   root 'static_pages#index'
 
   namespace :admin do 
   	resources :students
+    get 'search', to: 'students#search'
   end
 
   resources :students
@@ -22,5 +23,5 @@ Rails.application.routes.draw do
 
   post :authentication, to: "authentications#create"
 
-  get 'search', to: 'static_pages#search' 
+  get 'search', to: 'static_pages#search'   
 end

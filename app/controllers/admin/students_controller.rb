@@ -2,7 +2,7 @@ class Admin::StudentsController < ApplicationController
 	before_action :ensure_admin
 
 	def index
-		
+		@students = Student.all.decorate
 	end
 
 	def new
@@ -19,6 +19,10 @@ class Admin::StudentsController < ApplicationController
 			flash[:alert] = @student.errors.full_messages[0]
 			render :new
 		end
+	end
+
+	def search
+
 	end
 
 	private
