@@ -7,7 +7,6 @@ let AdminStudents = React.createClass({
 	},
 
 	handleSubmit(data){
-		console.log(data);
 		this.setState({student: data, searched: true})
 	},
 
