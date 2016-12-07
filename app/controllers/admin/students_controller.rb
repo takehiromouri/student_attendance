@@ -2,7 +2,7 @@ class Admin::StudentsController < ApplicationController
 	before_action :ensure_admin
 
 	def index
-		@students = Student.all.decorate
+		@students = Student.all.includes(:attendance_records).decorate
 	end
 
 	def new

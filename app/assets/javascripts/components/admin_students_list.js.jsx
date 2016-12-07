@@ -43,8 +43,9 @@ let AdminStudentsList = React.createClass({
 			return (
 				<tr>
 					<td>{student.student_number}</td>
-					<td>{student.name}</td>
-					<td>{student.phone}</td>
+					<td>{student.name}</td>					
+					<td><a href={`tel:${student.phone}`} target="_blank">{student.phone}</a></td>
+					<td>{student.attendance_records[0].created_at}</td>
 					<td>
 						<button className="button" onClick={this.handleClickDetail} data-student-number={student.student_number}>
 							詳細
@@ -59,7 +60,7 @@ let AdminStudentsList = React.createClass({
 		if (this.state.displayStudent) {
 			return (
 				<div>
-					<button className="button" onClick={this.displayAll}>一覧</button>
+					<button className="button warning" onClick={this.displayAll}>一覧に戻る</button>
 					<AdminStudent student={this.state.student} />
 				</div>
 			)
@@ -73,6 +74,7 @@ let AdminStudentsList = React.createClass({
 								<th>生徒番号</th>
 								<th>名前</th>
 								<th>電話番号</th>
+								<th>最終出席日</th>
 								<th></th>
 							</tr>
 						</thead>
