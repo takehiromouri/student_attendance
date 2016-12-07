@@ -1,2 +1,2 @@
-<%= react_component "AttendanceFormContainer", authenticated: session[:authenticated] %>
+<%= react_component "AttendanceFormContainer", authenticated: session[:authenticated], headerText: AdminSetting.first.header_text %>
 

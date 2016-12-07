@@ -24,3 +24,19 @@ a {
 	padding-top: 15px;
 	height: $footer-height;
 }
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee p {
+  overflow: hidden;
+  animation: marquee 8s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}

@@ -24,6 +24,7 @@ ja:
         student: 生徒  
       admin_setting:
         password: パスワード
+        header_text: トップテキスト
         footer_text: フッターテキスト     
     errors:
       messages:

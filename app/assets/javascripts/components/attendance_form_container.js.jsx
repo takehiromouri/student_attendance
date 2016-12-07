@@ -26,10 +26,19 @@ let AttendanceFormContainer = React.createClass({
 
 		return (
 			<div>
+				<div className="row">
+					<div className="column medium-4 medium-offset-4">
+						<div className="marquee">
+							<p>{this.props.headerText}</p>
+						</div>
+
+						<hr />
+					</div>
+				</div>				
+				
 				{form}
 
-				<AuthenticatedFlash />
-
+				<AuthenticatedFlash />			
 			</div>
 		)
 	}

@@ -99,7 +99,7 @@ let AttendanceForm = React.createClass({
 		return (
 			<div>
 				{errorMessage}
-				
+
 				<form>
 				  <div className="row">
 				    <div className="medium-4 medium-offset-4 small-12 columns">			      

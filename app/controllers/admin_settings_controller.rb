@@ -7,7 +7,7 @@ class AdminSettingsController < ApplicationController
 
 	def update
 		@setting = AdminSetting.first
-
+		
 		if @setting.update(admin_setting_params)
 			flash[:success] = "設定が変更されました。"			
 		else
@@ -20,6 +20,6 @@ class AdminSettingsController < ApplicationController
 	private
 
 	def admin_setting_params
-		params.require(:admin_setting).permit(:password, :footer_text)
+		params.require(:admin_setting).permit(:password, :footer_text, :header_text)
 	end
 end

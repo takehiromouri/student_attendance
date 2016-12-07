@@ -5,7 +5,8 @@
 
 		<%= simple_form_for @setting, url: '/admin_settings', method: :patch do |f| %>
 			<%= f.input :password, placeholder: "パスワード" %>
-			<%= f.input :footer_text, placeholder: "フッターテキスト" %>
+			<%= f.input :header_text, placeholder: "トップテキスト" %>
+			<%= f.input :footer_text, placeholder: "フッターテキスト" %>			
 			<%= f.submit class: 'button float-right' %>
 		<% end %>
 
