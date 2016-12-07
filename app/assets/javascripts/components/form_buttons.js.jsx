@@ -9,6 +9,10 @@ let FormButtons = React.createClass({
 		this.props.handleDeleteChar();
 	},
 
+	handleSubmit(e){
+		this.props.handleSubmit(e);
+	},
+
 	render(){
 		return (
 			<div className="row">
@@ -36,6 +40,7 @@ let FormButtons = React.createClass({
 							<tr>
 								<td onClick={this.handleUpdate}><div className="number">0</div></td>						
 								<td onClick={this.handleDeleteChar}><div className="number">消</div></td>
+								<td onClick={this.handleSubmit} style={{"background": "#da3116"}}><div className="number">入</div></td>
 							</tr>
 						</tbody>
 					</table>
