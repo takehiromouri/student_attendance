@@ -102,7 +102,7 @@ let AttendanceForm = React.createClass({
 
 				<form>
 				  <div className="row">
-				    <div className="medium-4 medium-offset-4 small-12 columns">			      
+				    <div className="large-4 large-offset-4 medium-8 medium-offset-2 small-12 columns">			      
 				    	<div className="input-group">
 							  <input className="input-group-field" 
 							  			 type="number" 
