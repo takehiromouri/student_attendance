@@ -51,8 +51,7 @@ let AdminSearchResults = React.createClass({
 			)
 		} else {
 			return (
-				<div style={{"overflowX": "auto"}}>
-					<h3>生徒一覧</h3>
+				<div style={{"overflowX": "auto"}}>					
 					<table className="responsive">
 						<thead>
 							<tr>
