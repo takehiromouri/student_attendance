@@ -1,21 +1,82 @@
 let AdminSearchResults = React.createClass({
-	student(){
-		if ($.isEmptyObject(this.props.student) && this.props.searched) {
-			return (
-				<h3 className="text-center">生徒が見つかりませんでした。</h3>
-			)
-		} else if ($.isEmptyObject(this.props.student) == false) {
-			return <AdminStudent student={this.props.student} />
+	getInitialState() {
+		return {
+			students: [],
+			student: {},
+			displayStudent: false
 		}
-		
+	},
+	
+	displayAll(e){
+		e.preventDefault();
+
+		this.setState({displayStudent: false, student: {}});
+	},
+
+	handleClickDetail(e){
+		e.preventDefault();
+		let studentNumber = $(e.target).data("student-number");
+
+		let student = this.state.students.filter((student) => {
+			return student.student_number == studentNumber;
+		});		
+
+		this.setState({student: student[0], displayStudent: true});
+	},
+
+	students(){
+		return this.state.students.map((student) => {
+			return (
+				<tr key={student.id}>
+					<td>{student.student_number}</td>
+					<td>{student.name}</td>					
+					<td><a href={`tel:${student.phone}`} target="_blank">{student.phone}</a></td>
+					<td>{student.attendance_records[0].created_at}</td>
+					<td>
+						<button className="button" onClick={this.handleClickDetail} data-student-number={student.student_number}>
+							詳細
+						</button>
+					</td>
+				</tr>
+			)
+		})
+	},
+
+	studentTable(){
+		if (this.state.displayStudent) {
+			return (
+				<div>
+					<button className="button warning" onClick={this.displayAll}>一覧に戻る</button>
+					<AdminStudent student={this.state.student} />
+				</div>
+			)
+		} else {
+			return (
+				<div style={{"overflowX": "auto"}}>
+					<h3>生徒一覧</h3>
+					<table className="responsive">
+						<thead>
+							<tr>
+								<th>生徒番号</th>
+								<th>名前</th>
+								<th>電話番号</th>
+								<th>最終出席日</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							{this.students()}
+						</tbody>
+					</table>
+				</div>
+			)
+		}
 	},
 
 	render(){
-		
-
 		return (
 			<div>
-				{this.student()}
+				{this.studentTable()}
 			</div>
 		)
 	}

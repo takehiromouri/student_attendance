@@ -1,7 +1,7 @@
 let AdminStudents = React.createClass({
 	getInitialState() {
 		return {
-			student: {},
+			students: [],
 			searched: false
 		};		
 	},
@@ -13,8 +13,8 @@ let AdminStudents = React.createClass({
 	render(){
 		return (
 			<div>
-				<SearchForm handleSubmit={this.handleSubmit}/>
-				<AdminSearchResults student={this.state.student} searched={this.state.searched}/>
+				<AdminSearchForm handleSubmit={this.handleSubmit}/>
+				<AdminSearchResults students={this.state.students} searched={this.state.searched}/>
 			</div>
 		)
 	}
