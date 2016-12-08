@@ -66,7 +66,7 @@ let AdminStudentsList = React.createClass({
 			return (
 				<div style={{"overflowX": "auto"}}>
 					<h3>生徒一覧</h3>
-					<table className="student-list">
+					<table className="responsive">
 						<thead>
 							<tr>
 								<th>生徒番号</th>
