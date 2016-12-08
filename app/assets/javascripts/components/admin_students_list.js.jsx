@@ -22,14 +22,12 @@ let AdminStudentsList = React.createClass({
 	displayAll(e){
 		e.preventDefault();
 
-		this.setState({displayStudent: false});
+		this.setState({displayStudent: false, student: {}});
 	},
 
 	handleClickDetail(e){
 		e.preventDefault();
 		let studentNumber = $(e.target).data("student-number");
-
-		console.log(studentNumber);
 
 		let student = this.state.students.filter((student) => {
 			return student.student_number == studentNumber;
@@ -66,9 +64,9 @@ let AdminStudentsList = React.createClass({
 			)
 		} else {
 			return (
-				<div>
+				<div style={{"overflowX": "auto"}}>
 					<h3>生徒一覧</h3>
-					<table className="responsive">
+					<table className="student-list">
 						<thead>
 							<tr>
 								<th>生徒番号</th>
