@@ -10,7 +10,7 @@ class AttendanceRecord < ApplicationRecord
 
 	def daily_limit
 		if student.attendance_records.created_today.any?
-			errors.add(ActiveRecord::Base, "今月の出席回数：#{student.attendance_records.this_month.count}回")
+			errors.add(:base, "今月の出席回数：#{student.attendance_records.this_month.length}回")
 		end
 	end
 end

@@ -5,7 +5,7 @@ class AttendanceRecordsController < ApplicationController
 		return error_response("生徒が見つかりませんでした。") if @student.nil?
 
 		attendance_record = @student.attendance_records.new
-	
+			
 		attendance_record.save		
 
 		success_response
