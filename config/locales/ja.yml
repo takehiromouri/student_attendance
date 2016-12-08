@@ -23,7 +23,7 @@ ja:
       attendance_record:
         student: 生徒  
       admin_setting:
-        password: パスワード
+        password: ナンバーロック解除パスワード
         header_text: トップテキスト
         footer_text: フッターテキスト     
     errors:

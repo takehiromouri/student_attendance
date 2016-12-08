@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207174947) do
+ActiveRecord::Schema.define(version: 20161208162142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,8 +58,10 @@ ActiveRecord::Schema.define(version: 20161207174947) do
     t.string   "first_name_hiragana"
     t.string   "last_name"
     t.string   "last_name_hiragana"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "deleted",             default: false, null: false
+    t.index ["deleted"], name: "index_students_on_deleted", using: :btree
     t.index ["student_number"], name: "index_students_on_student_number", using: :btree
   end
 
