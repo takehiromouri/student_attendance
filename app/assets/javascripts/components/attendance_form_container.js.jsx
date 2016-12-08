@@ -27,7 +27,7 @@ let AttendanceFormContainer = React.createClass({
 		return (
 			<div>
 				<div className="row">
-					<div className="column medium-4 medium-offset-4">
+					<div className="column large-4 large-offset-4 medium-8 medium-offset-2">
 						<div className="marquee">
 							<p>{this.props.headerText}</p>
 						</div>
