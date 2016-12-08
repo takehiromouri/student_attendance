@@ -13,20 +13,9 @@ class StudentsController < ApplicationController
 	def search		
 		return unless params[:query]
 
-		# @students = Student.includes(:attendance_records)
-		# 									 .where(student_number: params[:query])
-		# 									 .where("first_name like ?", "%#{params[:query]}")
-		# 									 .or
-		# 									 .where("last_name like ?", "%#{params[:query]}")
-		# 									 .or
-		# 									 .where("first_name_hiragana like ?", "%#{params[:query]}")
-		# 									 .or
-		# 									 .where("last_name_hiragana like ?", "%#{params[:query]}")
-		# 									 .try(:decorate)
-
 		@students = Student.where("first_name like ? or last_name like ? or first_name_hiragana like ? or last_name_hiragana like ? or student_number like ?", params[:query], params[:query], params[:query], params[:query], params[:query]).try(:decorate)
 
-		respond_to_empty(params[:query]) if @students.empty?			
+		respond_to_empty(params[:query]) if @students.empty?		
 		
 	end
 

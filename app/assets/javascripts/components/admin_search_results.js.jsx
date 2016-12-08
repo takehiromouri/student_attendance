@@ -1,12 +1,11 @@
 let AdminSearchResults = React.createClass({
 	getInitialState() {
 		return {
-			students: [],
 			student: {},
 			displayStudent: false
 		}
 	},
-	
+
 	displayAll(e){
 		e.preventDefault();
 
@@ -17,7 +16,7 @@ let AdminSearchResults = React.createClass({
 		e.preventDefault();
 		let studentNumber = $(e.target).data("student-number");
 
-		let student = this.state.students.filter((student) => {
+		let student = this.props.students.filter((student) => {
 			return student.student_number == studentNumber;
 		});		
 
@@ -25,7 +24,7 @@ let AdminSearchResults = React.createClass({
 	},
 
 	students(){
-		return this.state.students.map((student) => {
+		return this.props.students.map((student) => {
 			return (
 				<tr key={student.id}>
 					<td>{student.student_number}</td>
