@@ -31,7 +31,7 @@ let AttendanceForm = React.createClass({
 			context: 'this',
 			data: { student_number: this.state.studentNumber },
 			success: (data) => {				
-				this.setState({studentName: data.name, studentNumber: ""});
+				this.setState({studentName: data.name});
 				$('#confirmation').foundation('open');			
 			},
 			error: (request, status, error) => {										
@@ -66,7 +66,7 @@ let AttendanceForm = React.createClass({
 			},
 			success: (data) => {
 				let studentName = data.student.last_name + data.student.first_name
-				this.setState({record: data.record, studentName: studentName, error: false});				
+				this.setState({record: data.record, studentName: studentName, error: false, studentNumber: ""});				
 
 				setTimeout(() => {
 					$('#result').foundation('open');	
