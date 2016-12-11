@@ -31,8 +31,6 @@ let AttendanceFormContainer = React.createClass({
 						<div className="marquee">
 							<p>{this.props.headerText}</p>
 						</div>
-
-						<hr />
 					</div>
 				</div>				
 				

@@ -29,7 +29,6 @@ function removeReadOnly(e){
 
 	if (that.hasAttribute('readonly')) {
     that.removeAttribute('readonly');
-    // fix for mobile safari to show virtual keyboard
     that.blur();    
     that.focus();  
   }
