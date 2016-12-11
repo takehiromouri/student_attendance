@@ -20,6 +20,7 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（再確認） 
+        current_password: 現在のパスワード
       attendance_record:
         student: 生徒  
       admin_setting:
