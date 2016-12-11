@@ -1,39 +1,51 @@
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle></button>
-  <div class="title-bar-title">メニュー</div>
-</div>
+<style type="text/css">
+  .sticky {
+  width: 100%;
+}
+</style>
 
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li>
-        <a href="/" style="padding: 0.2rem 1rem;">
-          <%= image_tag 'logo.png', class: 'brand' %>
-        </a>
-      </li>      
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
-      <% if admin_signed_in? %>
-        <li class="menu-text"><%= link_to '<i class="fi-magnifying-glass"></i> 検索する'.html_safe, admin_search_path %></li>
-        <li class="menu-text"><%= link_to '<i class="fi-check"></i> 出席確認'.html_safe, admin_dashboard_index_path %></li>
-        <li class="menu-text"><%= link_to '<i class="fi-list"></i> 生徒一覧'.html_safe, admin_students_path %></li>
-        <li class="menu-text"><%= link_to '<i class="fi-torso"></i> 生徒登録'.html_safe, new_admin_student_path %></li>
+<div class="top-bar-container" data-sticky-container>
+  <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
 
-        <li>
-          <a href="#"><i class="fi-widget"></i> 設定</a>
-          <ul class="menu">
-            <li class="menu-text"><%= link_to '<i class="fi-torso"></i> アカウント設定'.html_safe, edit_admin_registration_path %></li>
-            <li class="menu-text"><%= link_to '<i class="fi-pencil"></i> 設定変更'.html_safe, admin_setting_path %></li>
-          </ul>
-        </li>
+    <div class="title-bar" data-responsive-toggle="topbar-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">メニュー</div>
+    </div>
 
-        <li class="menu-text"><%= link_to '<i class="fi-unlock"></i> ログアウト'.html_safe, destroy_admin_session_path, method: :delete %></li>
-      <% else %>
-        <li class="menu-text"><%= link_to '<i class="fi-magnifying-glass"></i> 検索する'.html_safe, search_path %></li>
-        <li class="menu-text"><%= link_to '<i class="fi-lock"></i> 管理者ログイン'.html_safe, new_admin_session_path %></li>        
-      <% end %>
-    </ul>
+    <div class="top-bar" id="topbar-menu">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li>
+            <a href="/" style="padding: 0.2rem 1rem;">
+              <%= image_tag 'logo.png', class: 'brand' %>
+            </a>
+          </li>      
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
+          <% if admin_signed_in? %>
+            <li class="menu-text"><%= link_to '<i class="fi-magnifying-glass"></i> 検索する'.html_safe, admin_search_path %></li>
+            <li class="menu-text"><%= link_to '<i class="fi-check"></i> 出席確認'.html_safe, admin_dashboard_index_path %></li>
+            <li class="menu-text"><%= link_to '<i class="fi-list"></i> 生徒一覧'.html_safe, admin_students_path %></li>
+            <li class="menu-text"><%= link_to '<i class="fi-torso"></i> 生徒登録'.html_safe, new_admin_student_path %></li>
+
+            <li>
+              <a href="#"><i class="fi-widget"></i> 設定</a>
+              <ul class="menu">
+                <li class="menu-text"><%= link_to '<i class="fi-torso"></i> アカウント設定'.html_safe, edit_admin_registration_path %></li>
+                <li class="menu-text"><%= link_to '<i class="fi-pencil"></i> 設定変更'.html_safe, admin_setting_path %></li>
+              </ul>
+            </li>
+
+            <li class="menu-text"><%= link_to '<i class="fi-unlock"></i> ログアウト'.html_safe, destroy_admin_session_path, method: :delete %></li>
+          <% else %>
+            <li class="menu-text"><%= link_to '<i class="fi-magnifying-glass"></i> 検索する'.html_safe, search_path %></li>
+            <li class="menu-text"><%= link_to '<i class="fi-lock"></i> 管理者ログイン'.html_safe, new_admin_session_path %></li>        
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>
