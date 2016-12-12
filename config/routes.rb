@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do 
   	resources :students
+    resources :attendance_records, only: :index
     get 'search', to: 'students#search'
   end
   
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :students
   
-  resources :attendance_records
+  resources :attendance_records, only: [:create]
 
   resources :admin_dashboard, only: :index
 
