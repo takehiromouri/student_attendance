@@ -31,7 +31,7 @@ let AttendanceForm = React.createClass({
 			context: 'this',
 			data: { student_number: this.state.studentNumber },
 			success: (data) => {				
-				this.setState({studentName: data.name});
+				this.setState({studentName: data.name, error: false});
 				$('#confirmation').foundation('open');			
 			},
 			error: (request, status, error) => {										
