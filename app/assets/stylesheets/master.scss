@@ -39,10 +39,10 @@ a {
 
 @media screen and (max-width: 39.9375em) {
 	.marquee {
-		width: 70%;
-		margin-top: 0px;
-		margin-left: 10px;
-		vertical-align: middle;
+		width: 60%;
+    margin-top: 0px;
+    vertical-align: middle;
+    float: right;
 
 		p {
 			margin-bottom: 0px;
