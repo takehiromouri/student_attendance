@@ -28,11 +28,27 @@ a {
 .marquee {
   overflow: hidden;
   position: relative;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 .marquee p {
   animation: marquee 8s linear infinite;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 39.9375em) {
+	.marquee {
+		width: 70%;
+		margin-top: 0px;
+		margin-left: 10px;
+		vertical-align: middle;
+
+		p {
+			margin-bottom: 0px;
+		}
+	}
+	
 }
 
 @keyframes marquee {

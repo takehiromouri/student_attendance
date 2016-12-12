@@ -11,6 +11,9 @@
     <div class="title-bar" data-responsive-toggle="topbar-menu" data-hide-for="medium">
       <button class="menu-icon" type="button" data-toggle></button>
       <div class="title-bar-title">メニュー</div>
+      <div class="marquee">
+        <p><%= admin_setting.header_text %></p>
+      </div>
     </div>
 
     <div class="top-bar" id="topbar-menu">
@@ -23,6 +26,11 @@
           </li>      
         </ul>
       </div>
+
+      <div class="marquee hide-for-small-only">
+        <p><%= admin_setting.header_text %></p>
+      </div>
+
       <div class="top-bar-right">
         <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
           <% if admin_signed_in? %>
