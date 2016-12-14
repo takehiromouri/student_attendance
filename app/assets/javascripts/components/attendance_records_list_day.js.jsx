@@ -42,7 +42,7 @@ let AttendanceRecordsListDay = React.createClass({
 			)
 		} else if (result && this.state.displayStudents) {
 			let student_names = result.map((record) => {
-				return <p key={record.student.student_number}><a href="#">{record.student.student_number}</a> {record.student.name}（{record.student.name_hiragana}）</p>;
+				return <p key={record.student.student_number}><strong>{record.student.student_number}</strong> {record.student.name}<span style={{"fontSize": "10px"}}>（{record.student.name_hiragana}）</span></p>;
 			});
 
 			return (

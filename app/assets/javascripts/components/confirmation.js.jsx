@@ -10,7 +10,7 @@ let Confirmation = React.createClass({
 
 	render(){
 		return (
-			<div className="reveal text-center" id="confirmation" data-reveal data-close-on-click="true" data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+			<div className="reveal text-center" id="confirmation" data-reveal data-close-on-click="true" data-animation-in="scale-in-up" data-animation-out="scale-out-down" data-close-on-esc="true">
 				<h3>{this.props.studentNumber}</h3>
 			  <h1 style={{"fontWeight": "600"}}>{this.props.studentName}</h1>			  
 			  
