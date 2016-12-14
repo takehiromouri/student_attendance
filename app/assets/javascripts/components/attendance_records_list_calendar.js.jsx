@@ -23,7 +23,7 @@ let AttendanceRecordsListCalendar = React.createClass({
                      month={this.state.month} 
                      attendanceRecords={this.props.attendanceRecords}
                      admin={true}
-                     today={new Date(`${this.state.month + 1} ${date} ${this.state.year}`).toDateString() === new Date().toDateString()}/>)
+                     today={new Date(`${this.state.year}/${this.state.month + 1}/${date} 00:00:00`).toDateString() === new Date().toDateString()}/>)
     }
 
     return days;
