@@ -1,5 +1,6 @@
 class Student < ApplicationRecord
 	has_many :attendance_records, dependent: :destroy
+	has_many :memos, dependent: :destroy
 	has_one :last_attendance_record, -> { order(created_at: :desc) }, class_name: "AttendanceRecord"
 
 	default_scope { where(deleted: false) }

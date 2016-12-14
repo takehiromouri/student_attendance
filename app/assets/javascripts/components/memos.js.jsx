@@ -1,0 +1,3 @@
+let Memos = React.createClass({
+	
+})

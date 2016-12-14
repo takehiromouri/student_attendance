@@ -4,7 +4,7 @@ let AdminStudent = React.createClass({
 			<div>
 				<div className="row">
 					<div className="medium-4 small-12 columns">
-						<div  style={{"backgroundColor": "white", "padding": "20px"}}>
+						<div className="callout">
 							<h2>{this.props.student.name}</h2>
 							<p><strong>生徒番号</strong> {this.props.student.student_number}</p>
 							<p><i className="fi-telephone"></i> <a href={`tel:${this.props.student.phone}`} target="_blank">{this.props.student.phone}</a></p>
@@ -27,8 +27,8 @@ let AdminStudent = React.createClass({
 					</div>
 
 					<div className="medium-8 small-12 columns">
-						<div style={{"backgroundColor": "white", "padding": "20px"}}>
-							<h3>メモ</h3>
+						<div className="callout">
+							<Memos student={this.props.student}/>
 						</div>
 					</div>
 

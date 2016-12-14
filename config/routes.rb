@@ -11,15 +11,16 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   namespace :admin do 
-  	resources :students
-    resources :attendance_records, only: [:index, :destroy]
+  	resources :students do
+      resources :memos, only: :create 
+    end
+
+    resources :memos, only: :destroy
+    resources :attendance_records, only: [:index, :destroy]       
     get 'search', to: 'students#search'
   end
   
   get 'students/search', to: 'students#search'
-
-
-  resources :students
   
   resources :attendance_records, only: [:create]
 
