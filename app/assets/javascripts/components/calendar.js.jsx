@@ -21,7 +21,8 @@ let Calendar = React.createClass({
                      date={date} 
                      year={this.state.year} 
                      month={this.state.month} 
-                     attendanceRecords={this.props.attendanceRecords}/>)
+                     attendanceRecords={this.props.attendanceRecords}
+                     today={new Date(`${this.state.month + 1} ${date} ${this.state.year}`).toDateString() === new Date().toDateString()}/>)
     }
 
     return days;

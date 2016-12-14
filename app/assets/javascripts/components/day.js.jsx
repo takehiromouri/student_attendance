@@ -24,6 +24,12 @@ let Day = React.createClass({
 		
 	},
 
+	dayStyles(){
+		if (this.props.today) {
+			return {"background": "rgb(255, 204, 0)"}
+		}
+	},
+
 	render(){
 		let days = {
 			"0": "日",
@@ -36,7 +42,7 @@ let Day = React.createClass({
 		}
 
 		return (
-			<tr>
+			<tr style={this.dayStyles()}>
 				<td>{this.props.date}</td>
 				<td>{days[this.day()]}</td>
 				<td>{this.attended()}</td>

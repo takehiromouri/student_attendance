@@ -46,7 +46,7 @@ let AdminSearchResults = React.createClass({
 		if (this.state.displayStudent) {
 			return (
 				<div>
-					<button className="button warning" onClick={this.displayAll}>一覧に戻る</button>
+					<button className="button warning button-back" onClick={this.displayAll}>一覧に戻る</button>
 					<AdminStudent student={this.state.student} />
 				</div>
 			)
