@@ -5,6 +5,10 @@ class StudentDecorator < Draper::Decorator
   	object.last_name + object.first_name
   end
 
+  def name_hiragana
+    object.last_name_hiragana + object.first_name_hiragana
+  end
+
   def phone
   	object.phone.empty? ? "無し" : object.phone  	
   end

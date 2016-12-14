@@ -26,7 +26,7 @@ let AttendanceRecordsList = React.createClass({
 
 	render(){
 		return (
-			<h1>Hi</h1>
+			<AttendanceRecordsListCalendar attendanceRecords={this.state.attendanceRecords} />
 		)
 	}
 })
