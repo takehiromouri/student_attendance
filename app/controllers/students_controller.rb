@@ -1,32 +1,34 @@
 class StudentsController < ApplicationController
 	def index
-		if params[:student_number].empty?
-			respond_to_empty
+		if params[:student_number].try(:empty?)
+			respond_to_empty("生徒番号")
 		elsif params[:student_number]
 			@student = Student.includes(:attendance_records)
 												.find_by(student_number: params[:student_number])											  
 											  .try(:decorate)
-														  
+
 			respond_to_not_found(params[:student_number]) if @student.nil?
 		else
-			respond_to_empty
+			respond_to_empty("生徒番号")
 		end
 	end
 
 	def search		
-		return unless params[:query]
-
-		@students = Student.where("first_name like ? or last_name like ? or first_name_hiragana like ? or last_name_hiragana like ? or student_number like ?", params[:query], params[:query], params[:query], params[:query], params[:query]).try(:decorate)
-
-		respond_to_not_found(params[:query]) if @students.empty?		
-		
+		if params[:query].try(:empty?)
+			respond_to_empty("検索項目")
+		elsif params[:query]
+			@students = Student.search(params[:query]).try(:decorate)
+			respond_to_not_found(params[:query]) if @students.empty?		
+		else
+			respond_to_empty("検索項目")
+		end
 	end
 
 	private
 
-	def respond_to_empty
+	def respond_to_empty(param)
 		respond_to do |format|
-			format.json { render json: "生徒番号を入力してください。", status: 500}
+			format.json { render json: "#{param}を入力してください。", status: 500}
 		end
 	end
 

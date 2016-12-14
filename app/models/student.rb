@@ -19,6 +19,15 @@ class Student < ApplicationRecord
 		end
 	end
 
+	def self.search(query)
+		where("first_name like ? or 
+					 last_name like ? or 
+					 first_name_hiragana like ? or 
+					 last_name_hiragana like ? or 
+					 student_number like ?", 
+					 query, query, query, query, query)
+	end
+
 	def delete
 		update(deleted: true)
 	end
