@@ -88,7 +88,6 @@ let ParentStudents = React.createClass({
 							  			 placeholder="生徒番号を入力"
 							  			 onChange={this.handleChange}
 							  			 onFocus={this.onInputFocus}
-							  			 onBlur={this.onInputFocus}
 							  			 value={this.state.studentNumber} />	
 							  <div className="input-group-button">
 							    <input type="submit" 

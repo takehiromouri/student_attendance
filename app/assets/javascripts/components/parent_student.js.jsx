@@ -6,7 +6,7 @@ let ParentStudent = React.createClass({
 				<hr/>
 
 				<h5 className="text-center">出席記録</h5>
-				<Calendar selected={new Date()} attendanceRecords={this.props.student.attendance_records}/>
+				<Calendar selected={new Date()} admin={false} attendanceRecords={this.props.student.attendance_records}/>
 			</div>
 		)
 	}

@@ -14,10 +14,16 @@ let Day = React.createClass({
 			return record.created_at_date == `${this.props.month + 1}/${this.props.date}/${this.props.year}`
 		})
 
-		if (result) {
+		if (result && this.props.admin) {
 			return (
 				<div>
 					<i className="fi-check"></i>{result.created_at_time} <a href={`/admin/attendance_records/${result.id}`} data-method="delete" className="button small alert float-right" style={{"marginBottom": "0px"}}>削除する</a>
+				</div>
+			)
+		} else if (result) {
+			return (
+				<div>
+					<i className="fi-check"></i>{result.created_at_time}
 				</div>
 			)
 		}
