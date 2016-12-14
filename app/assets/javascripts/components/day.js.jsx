@@ -17,7 +17,7 @@ let Day = React.createClass({
 		if (result) {
 			return (
 				<div>
-					<i className="fi-check"></i>{result.created_at_time}
+					<i className="fi-check"></i>{result.created_at_time} <a href={`/admin/attendance_records/${result.id}`} data-method="delete" className="button small alert float-right" style={{"marginBottom": "0px"}}>削除する</a>
 				</div>
 			)
 		}

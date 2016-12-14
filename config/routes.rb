@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do 
   	resources :students
-    resources :attendance_records, only: :index
+    resources :attendance_records, only: [:index, :destroy]
     get 'search', to: 'students#search'
   end
   

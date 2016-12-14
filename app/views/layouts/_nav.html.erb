@@ -28,9 +28,11 @@
       </div>
 
       <% unless admin_signed_in? %>
+      
         <div class="marquee hide-for-small-only">
           <p><%= admin_setting.header_text %></p>
         </div>
+      
       <% end %>
 
       <div class="top-bar-right">
