@@ -45,6 +45,15 @@ a {
 	margin: 0 10px 1rem 1rem;
 }
 
+.memo-container {
+	max-height: 300px;
+	overflow: auto;
+	background: whitesmoke;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #cacaca;
+}
+
 @media screen and (max-width: 39.9375em) {
 	.marquee {
 		width: 60%;

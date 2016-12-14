@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do 
   	resources :students do
-      resources :memos, only: :create 
+      resources :memos, only: [:index, :create]
     end
 
     resources :memos, only: :destroy

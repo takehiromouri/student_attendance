@@ -1,6 +1,15 @@
 class Admin::MemosController < ApplicationController
 	before_action :ensure_admin
 
+	def index
+		student = Student.find(params[:student_id])
+		@memos = Admin::MemoDecorator.decorate_collection(student.memos)
+
+		respond_to do |format|
+			format.json { render json: @memos }
+		end
+	end
+
 	def create
 		student = Student.find(params[:student_id])
 
@@ -8,7 +17,7 @@ class Admin::MemosController < ApplicationController
 
 		if memo.save
 			respond_to do |format|
-				format.json { render json: memo }
+				format.json { render json: Admin::MemoDecorator.decorate(memo) }
 			end
 		else
 			respond_to do |format|
