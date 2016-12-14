@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :attendance_records, only: [:index, :destroy]       
     get 'search', to: 'students#search'
   end
+
+  resources :students, only: :index
   
   get 'students/search', to: 'students#search'
   
