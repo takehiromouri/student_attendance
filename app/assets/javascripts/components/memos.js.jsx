@@ -22,6 +22,13 @@ let Memos = React.createClass({
 		this.setState({memos: memos});
 	},
 
+	handleDelete(memoId){
+		let memos = this.state.memos.filter(function(memo) {      
+      return memo.id !== memoId;
+    });
+    this.setState({memos: memos});
+	},
+
 	scrollToLastMemo(){
 		setTimeout(function () {
       let memoContainer = document.getElementById("memo-container");
@@ -31,10 +38,15 @@ let Memos = React.createClass({
 
 	memos(){
 		let memos = this.state.memos.map((memo) => {
-			return <Memo memo={memo} key={memo.id}/>
+			return <Memo memo={memo} key={memo.id} handleDelete={this.handleDelete}/>
 		});
 
-		return memos;
+		if (memos.length > 0) {
+			return memos;	
+		} else {
+			return <h6 className="text-center">記録されているメモはありません。</h6>
+		}
+		
 	},
 
 	render(){		

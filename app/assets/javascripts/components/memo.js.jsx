@@ -1,6 +1,20 @@
 let Memo = React.createClass({
 	handleDelete(e){
 		e.preventDefault();
+
+		if (confirm("本当に削除してよろしいでしょうか？")) {
+			let memoId = this.props.memo.id;
+
+			$.ajax({
+				url: `/admin/memos/${memoId}`,
+				type: "DELETE",
+				dataType: "JSON",
+				context: "this",			
+				success: (data) => {
+					this.props.handleDelete(memoId);				
+				}
+			})
+		}
 	},
 
 	render(){
