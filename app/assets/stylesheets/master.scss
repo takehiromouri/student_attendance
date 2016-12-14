@@ -37,6 +37,14 @@ a {
   white-space: nowrap;
 }
 
+.stat-bar {
+	background-color: yellow;
+	height: 40px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px 1rem 1rem;
+}
+
 @media screen and (max-width: 39.9375em) {
 	.marquee {
 		width: 60%;
@@ -55,3 +63,4 @@ a {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+

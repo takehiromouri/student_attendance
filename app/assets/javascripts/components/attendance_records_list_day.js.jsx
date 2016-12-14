@@ -20,23 +20,36 @@ let AttendanceRecordsListDay = React.createClass({
 		})
 
 		if (result && !this.state.displayStudents) {
+			let length;
+
+			if (result.length >= 100) {
+				length = 100;
+			} else if (result.length == 0) {
+				length = 1;
+			} else {
+				length = result.length
+			}
+
 			return (
 				<div>
-					<a href="#" onClick={this.handleClick}>
-						{result.length}人
-					</a>
+					<button onClick={this.handleClick} className="button">
+						一覧
+					</button>
+					<div className="stat-bar" style={{"width": `${length}%`}}>
+					</div>
+					{result.length}人
 				</div>
 			)
 		} else if (result && this.state.displayStudents) {
 			let student_names = result.map((record) => {
-				return <p><strong>{record.student.student_number}</strong> {record.student.name}（{record.student.name_hiragana}）</p>;
+				return <p key={record.student.student_number}><a href="#">{record.student.student_number}</a> {record.student.name}（{record.student.name_hiragana}）</p>;
 			});
 
 			return (
 				<div>
-					<a href="" onClick={this.handleClick}>
-						{result.length}人
-					</a>
+					<button onClick={this.handleClick} className="button warning">
+						閉じる
+					</button>
 					<hr />
 					{student_names}
 				</div>
@@ -59,7 +72,7 @@ let AttendanceRecordsListDay = React.createClass({
 			<tr>
 				<td>{this.props.date}</td>
 				<td>{days[this.day()]}</td>
-				<td>{this.attended()}</td>
+				<td style={{"width": "60%"}}>{this.attended()}</td>
 			</tr>
 		)
 	}
