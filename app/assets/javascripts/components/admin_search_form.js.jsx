@@ -58,11 +58,12 @@ let AdminSearchForm = React.createClass({
 							    			 onClick={this.handleSubmit} 
 							    			 value="検索する" />
 							  </div>
+
 							</div>
 				      		      
 				    </div>			    
 				  </div>
-				</form>
+				</form>				
 			</div>
 		)
 	}

@@ -16,6 +16,7 @@ let ParentStudents = React.createClass({
 		$.ajax({
 			url: '/students.json',
 			type: 'GET',
+			cache : false,
 			dataType: 'JSON',
 			context: 'this',
 			data: { student_number: this.state.studentNumber },

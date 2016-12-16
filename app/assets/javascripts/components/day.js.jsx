@@ -17,7 +17,7 @@ let Day = React.createClass({
 		if (result && this.props.admin) {
 			return (
 				<div>
-					<i className="fi-check"></i>{result.created_at_time} <a href={`/admin/attendance_records/${result.id}`} data-method="delete" className="button small alert float-right" style={{"marginBottom": "0px"}}>削除する</a>
+					<i className="fi-check"></i>{result.created_at_time} <a href={`/admin/attendance_records/${result.id}`} data-method="delete" data-confirm="本当に削除してよろしいでしょうか？" className="button small alert float-right" style={{"marginBottom": "0px"}}>削除する</a>
 				</div>
 			)
 		} else if (result) {
