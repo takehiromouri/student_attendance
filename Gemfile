@@ -42,6 +42,8 @@ gem 'react-rails'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
 
+gem 'jquery-minicolors-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

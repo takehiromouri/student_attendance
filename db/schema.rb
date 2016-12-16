@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214075445) do
+ActiveRecord::Schema.define(version: 20161216060429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admin_settings", force: :cascade do |t|
     t.text     "footer_text"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "password"
     t.text     "header_text"
+    t.string   "button_color"
+    t.string   "top_color"
+    t.string   "footer_color"
   end
 
   create_table "admins", force: :cascade do |t|

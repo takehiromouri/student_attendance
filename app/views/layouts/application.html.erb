@@ -40,5 +40,21 @@
       <%= render 'layouts/footer' %>
     </div>
 
+    <script type="text/javascript">
+    $(function(){
+      <% if admin_setting.button_color %>
+        $(".button").css({"background": "<%= admin_setting.button_color %>"});
+      <% end %>
+
+      <% if admin_setting.top_color %>
+        $(".title-bar").css({"background": "<%= admin_setting.top_color %>"});
+      <% end %>
+
+      <% if admin_setting.footer_color %>
+        $(".footer").css({"background": "<%= admin_setting.footer_color %>"});
+      <% end %>
+    })
+      
+    </script>
   </body>
 </html>
