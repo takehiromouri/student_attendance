@@ -11,8 +11,8 @@ let ParentStudents = React.createClass({
 	},
 
 	handleSubmit(e){
-		e.preventDefault();
-
+		alert("TEST");
+		e.preventDefault();		
 		$.ajax({
 			url: '/students.json',
 			type: 'GET',
