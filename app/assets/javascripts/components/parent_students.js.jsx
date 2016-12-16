@@ -19,8 +19,7 @@ let ParentStudents = React.createClass({
 			context: 'this',
 			data: { student_number: this.state.studentNumber },
 			success: (data) => {		
-				this.setState({showKeyboard: false, error: false});				
-				alert(`Student: ${this.state.student}, showKeyboard: ${this.state.showKeyboard}`)		
+				this.setState({student: data, showKeyboard: false, error: false});				
 			},
 			error: (request, status, error) => {										
 				this.setState({error: true, errorMessage: request.responseText});

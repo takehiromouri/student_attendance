@@ -19,3 +19,6 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+if (window.Promise === undefined) {
+    document.write('<scr'+'ipt src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.js"></scr'+'ipt>');
+}
