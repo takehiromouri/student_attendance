@@ -10,8 +10,7 @@ let ParentStudents = React.createClass({
 		};		
 	},
 
-	handleSubmit(e){
-		alert("TEST");
+	handleSubmit(e){		
 		e.preventDefault();		
 		$.ajax({
 			url: '/students.json',
@@ -101,6 +100,8 @@ let ParentStudents = React.createClass({
 				    </div>			    
 				  </div>
 				</form>
+
+				<h2>{this.state.studetNumber}</h2>
 
 				{this.formButtons()}
 
