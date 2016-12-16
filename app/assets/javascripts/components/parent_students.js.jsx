@@ -14,13 +14,12 @@ let ParentStudents = React.createClass({
 		e.preventDefault();		
 		$.ajax({
 			url: '/students.json',
-			type: 'GET',
-			cache : false,
+			type: 'GET',			
 			dataType: 'JSON',
 			context: 'this',
 			data: { student_number: this.state.studentNumber },
 			success: (data) => {		
-				this.setState({student: data, showKeyboard: false, error: false});				
+				this.setState({showKeyboard: false, error: false});				
 				alert(`Student: ${this.state.student}, showKeyboard: ${this.state.showKeyboard}`)		
 			},
 			error: (request, status, error) => {										
