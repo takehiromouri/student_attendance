@@ -77,7 +77,6 @@ let ParentStudents = React.createClass({
 		return (
 			<div>
 				{errorMessage}
-				{this.state.studentNumber}
 				<form>
 				  <div className="row">
 				    <div className="large-4 large-offset-4 medium-8 medium-offset-2 small-12 columns">			      
