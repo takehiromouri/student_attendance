@@ -10,7 +10,8 @@ let ParentStudents = React.createClass({
 		};		
 	},
 
-	handleSubmit(e){				
+	handleSubmit(e){			
+	alert("Hi");	
 		e.preventDefault();		
 		$.ajax({
 			url: '/students.json',
