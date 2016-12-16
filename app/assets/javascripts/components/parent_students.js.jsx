@@ -11,7 +11,6 @@ let ParentStudents = React.createClass({
 	},
 
 	handleSubmit(e){			
-	alert("Hi");	
 		e.preventDefault();		
 		$.ajax({
 			url: '/students.json',
@@ -20,8 +19,10 @@ let ParentStudents = React.createClass({
 			dataType: 'JSON',
 			context: 'this',
 			data: { student_number: this.state.studentNumber },
-			success: (data) => {				
+			success: (data) => {		
+				alert(`Data: ${data}, showKeyboard: ${this.state.showKeyboard}`)		
 				this.setState({student: data, showKeyboard: false, error: false});				
+				alert(`Student: ${this.state.student}, showKeyboard: ${this.state.showKeyboard}`)		
 			},
 			error: (request, status, error) => {										
 				this.setState({error: true, errorMessage: request.responseText});
