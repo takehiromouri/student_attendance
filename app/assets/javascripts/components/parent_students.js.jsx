@@ -10,7 +10,7 @@ let ParentStudents = React.createClass({
 		};		
 	},
 
-	handleSubmit(e){		
+	handleSubmit(e){				
 		e.preventDefault();		
 		$.ajax({
 			url: '/students.json',
@@ -78,7 +78,7 @@ let ParentStudents = React.createClass({
 		return (
 			<div>
 				{errorMessage}
-
+				{this.state.studentNumber}
 				<form>
 				  <div className="row">
 				    <div className="large-4 large-offset-4 medium-8 medium-offset-2 small-12 columns">			      
@@ -99,9 +99,7 @@ let ParentStudents = React.createClass({
 				      		      
 				    </div>			    
 				  </div>
-				</form>
-
-				<h2>{this.state.studetNumber}</h2>
+				</form>				
 
 				{this.formButtons()}
 
