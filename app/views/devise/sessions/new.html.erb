@@ -5,9 +5,9 @@
 
 		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {autocomplete: "nope"}) do |f| %>	
 		  <div class="form-inputs">
-		    <%= f.input :email, required: false, autofocus: true, readonly: true %>
+		    <%= f.input :email, required: false, autofocus: true %>
 		    
-		    <%= f.input :password, required: false, readonly: true %>
+		    <%= f.input :password, required: false %>
 
 		  </div>
 
@@ -21,20 +21,9 @@
 </div>
 
 <script type="text/javascript">
-let emailField = $("#admin_email");
 let passwordField = $("#admin_password");
 
-function removeReadOnly(e){
-	let that = e.target;
-
-	if (that.hasAttribute('readonly')) {
-    that.removeAttribute('readonly');
-    that.blur();    
-    that.focus();  
-  }
-}
-
-emailField.on("focus", removeReadOnly);
-passwordField.on("focus", removeReadOnly);
-
+setTimeout(() => {
+	passwordField.val("");
+}, 50); 
 </script>
