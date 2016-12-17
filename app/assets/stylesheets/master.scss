@@ -8,6 +8,10 @@ textarea {
 	resize: both;
 }
 
+p {
+	word-wrap: break-word;
+}
+
 button:focus {
 	outline: none;
 }
