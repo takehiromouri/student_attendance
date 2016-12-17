@@ -9,7 +9,11 @@ class AuthenticationsController < ApplicationController
 				format.json { render json: :no_head, status: 200 }
 			end
 		elsif admin_authenticated?
-			redirect_to new_admin_session_path
+			flash[:success] = "認証されました。"
+			respond_to do |format|
+				format.json { render json: { url: new_admin_session_path }, status: 200 }
+			end
+			
 		else
 			respond_to do |format|
 				format.json { render json: "パスワードが間違っています。", status: 500 }
@@ -31,7 +35,7 @@ class AuthenticationsController < ApplicationController
 		session[:authenticated] = true
 	end
 
-	def password
+	def admin_password
 		@admin_password ||= AdminSetting.first.admin_password.to_s
 	end
 

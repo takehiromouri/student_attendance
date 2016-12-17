@@ -39,7 +39,11 @@ let AuthenticationForm = React.createClass({
 				authentication: { password: this.state.password } 
 			},
 			success: (data) => {				
-				this.props.handleAuthenticated();			
+				if (data.url) {
+					window.location.replace(data.url);
+				} else {
+					this.props.handleAuthenticated();				
+				}
 			},
 			error: (request, status, error) => {										
 				this.setState({error: true, errorMessage: request.responseText});
