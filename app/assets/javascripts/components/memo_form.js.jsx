@@ -5,6 +5,10 @@ let MemoForm = React.createClass({
 		}
 	},
 
+	componentDidMount() {
+		$("textarea").resizable();
+	},
+
 	handleChange(e){
 		let content = e.target.value;
 		this.setState({content: content});

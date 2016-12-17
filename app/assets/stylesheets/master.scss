@@ -4,6 +4,10 @@ html, body {
 	font-family: "Rounded Mplus 1c";
 }
 
+textarea {
+	resize: both;
+}
+
 button:focus {
 	outline: none;
 }
