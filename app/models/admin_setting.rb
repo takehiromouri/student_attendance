@@ -1,3 +1,3 @@
 class AdminSetting < ApplicationRecord
-	validates :password, :footer_text, presence: true
+	validates :password, :admin_setting, :footer_text, presence: true
 end

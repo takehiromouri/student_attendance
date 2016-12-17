@@ -8,6 +8,8 @@ class AuthenticationsController < ApplicationController
 			respond_to do |format|
 				format.json { render json: :no_head, status: 200 }
 			end
+		elsif admin_authenticated?
+			redirect_to new_admin_session_path
 		else
 			respond_to do |format|
 				format.json { render json: "パスワードが間違っています。", status: 500 }
@@ -16,6 +18,10 @@ class AuthenticationsController < ApplicationController
 	end
 
 	private
+
+	def admin_authenticated?
+		authentication_params[:password] == admin_password
+	end
 
 	def authenticated?
 		authentication_params[:password] == password
@@ -26,7 +32,11 @@ class AuthenticationsController < ApplicationController
 	end
 
 	def password
-		password ||= AdminSetting.first.password.to_s
+		@admin_password ||= AdminSetting.first.admin_password.to_s
+	end
+
+	def password
+		@password ||= AdminSetting.first.password.to_s
 	end
 
 	def authentication_params

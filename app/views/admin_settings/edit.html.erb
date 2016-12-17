@@ -5,6 +5,7 @@
 
 		<%= simple_form_for @setting, url: '/admin_settings', method: :patch do |f| %>
 			<%= f.input :password, placeholder: "パスワード" %>
+			<%= f.input :admin_password, placeholder: "管理者パスワード" %>
 			<%= f.input :header_text, placeholder: "トップテキスト" %>
 			<%= f.input :footer_text, placeholder: "フッターテキスト" %>	
 			<%= f.input :top_color, as: :minicolors, input_html: {data: {

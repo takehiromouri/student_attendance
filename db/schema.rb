@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216152656) do
+ActiveRecord::Schema.define(version: 20161217053444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20161216152656) do
     t.string   "footer_color"
     t.string   "secondary_button_color"
     t.string   "third_button_color"
+    t.string   "admin_password"
   end
 
   create_table "admins", force: :cascade do |t|

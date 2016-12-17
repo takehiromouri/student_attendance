@@ -64,6 +64,11 @@ a {
 	margin: 0 10px 0 1rem;
 }
 
+.sticky {
+  width: 100%;
+  z-index: 9999;
+}
+
 .memo-container {
 	max-height: 300px;
 	overflow: auto;
@@ -95,3 +100,4 @@ a {
   0% { -webkit-transform: translateX(100%); }
   100% { -webkit-transform: translateX(-100%); }
 }
+
