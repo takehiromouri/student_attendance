@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :admin_setting
   def admin_setting
-  	@admin_setting ||= AdminSetting.first
+  	@admin_setting ||= AdminSetting.first.decorate
   end
 
   def ensure_admin
