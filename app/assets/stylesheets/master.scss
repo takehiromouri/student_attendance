@@ -42,6 +42,9 @@ a {
 
 .marquee p {
   animation: marquee 8s linear infinite;
+  -webkit-animation: marquee 8s linear infinite;
+  -moz-animation: marquee 8s linear infinite;
+  -o-animation: marquee 8s linear infinite;
   white-space: nowrap;
 }
 
@@ -86,12 +89,17 @@ a {
 }
 
 @-webkit-keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { -webkit-transform: translateX(100%); }
+  100% { -webkit-transform: translateX(-100%); }
 }
 
 @-moz-keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { -moz-transform: translateX(100%); }
+  100% { -moz-transform: translateX(-100%); }
+}
+
+@-o-keyframes marquee {
+  0% { -o-transform: translateX(100%); }
+  100% { -o-transform: translateX(-100%); }
 }
 
