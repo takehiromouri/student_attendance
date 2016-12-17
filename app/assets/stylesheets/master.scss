@@ -83,23 +83,7 @@ a {
 	
 }
 
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
 @-webkit-keyframes marquee {
   0% { -webkit-transform: translateX(100%); }
   100% { -webkit-transform: translateX(-100%); }
 }
-
-@-moz-keyframes marquee {
-  0% { -moz-transform: translateX(100%); }
-  100% { -moz-transform: translateX(-100%); }
-}
-
-@-o-keyframes marquee {
-  0% { -o-transform: translateX(100%); }
-  100% { -o-transform: translateX(-100%); }
-}
-
