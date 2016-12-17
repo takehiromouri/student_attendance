@@ -77,7 +77,7 @@ let AuthenticationForm = React.createClass({
 				  </div>
 				</form>
 
-				<FormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar}/>
+				<FormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar} handleSubmit={this.handleSubmit}/>
 			</div>
 		)
 	}

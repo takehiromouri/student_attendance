@@ -46,6 +46,14 @@
         $(".button").css({"background": "<%= admin_setting.button_color %>"});
       <% end %>
 
+      <% if admin_setting.secondary_button_color %>
+        $(".button .warning").css({"background": "<%= admin_setting.secondary_button_color %>"});
+      <% end %>
+
+      <% if admin_setting.third_button_color %>
+        $(".button .alert").css({"background": "<%= admin_setting.third_button_color %>"});
+      <% end %>
+
       <% if admin_setting.top_color %>
         $(".title-bar").css({"background": "<%= admin_setting.top_color %>"});
       <% end %>

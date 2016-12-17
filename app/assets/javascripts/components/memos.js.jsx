@@ -52,6 +52,7 @@ let Memos = React.createClass({
 	render(){		
 		return (
 			<div>
+				<h6><i className="fi-clipboard-pencil"></i> かきけしメモ</h6>
 				<div className="memo-container" id="memo-container">
 					{this.memos()}
 				</div>

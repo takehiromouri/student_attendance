@@ -26,7 +26,12 @@ ja:
       admin_setting:
         password: ナンバーロック解除パスワード
         header_text: トップテキスト
-        footer_text: フッターテキスト     
+        footer_text: フッターテキスト
+        top_color: トップ色  
+        button_color: メインボタン色
+        secondary_button_color: 二番目ボタン色（元々オレンジ）
+        third_button_color: 三番目ボタン色（元々赤）
+        footer_color: フッター色
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

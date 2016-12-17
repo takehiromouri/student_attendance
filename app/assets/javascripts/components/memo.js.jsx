@@ -19,9 +19,9 @@ let Memo = React.createClass({
 
 	render(){
 		return (
-			<div className="callout">
+			<div className="callout">				
 				<span className="float-right">
-					<a onClick={this.handleDelete}><i className="fi-trash"></i></a>
+					<a onClick={this.handleDelete}>消す <i className="fi-trash"></i></a>
 				</span>
 				<p><small>{this.props.memo.created_at}</small></p>
 				<p>{this.props.memo.content}</p>

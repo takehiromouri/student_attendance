@@ -34,7 +34,7 @@ let MemoForm = React.createClass({
   	return (
   		<form>
   			<textarea name="content" value={this.state.content} onChange={this.handleChange} placeholder="メモ内容" rows="5"/>
-  			<button onClick={this.handleSubmit} className="button">送信する</button>
+  			<button onClick={this.handleSubmit} className="button">メモする</button>
   		</form>
   	)
   }
