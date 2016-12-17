@@ -23,11 +23,15 @@ let AttendanceFormContainer = React.createClass({
 		}, 3000);
 	},
 
+	handleToggleAuthentication(){
+		this.setState({authenticated: false});
+	},
+
 	render(){
 		let form;
 
 		if (this.state.authenticated) {
-			form = <AttendanceForm />
+			form = <AttendanceForm handleToggleAuthentication={this.handleToggleAuthentication}/>
 		} else {
 			form = <AuthenticationForm handleAuthenticated={this.handleAuthenticated} />			
 		}
