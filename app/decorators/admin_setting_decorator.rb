@@ -33,4 +33,8 @@ class AdminSettingDecorator < Draper::Decorator
     object.form_button_pressed_color.empty? ? "#2199e8" : object.form_button_pressed_color
   end
 
+  def title_setting
+    object.title_setting.empty? ? "先生と生徒、保護者を繋ぐツール - Triangle" : object.title_setting
+  end
+
 end

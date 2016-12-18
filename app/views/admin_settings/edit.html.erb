@@ -4,6 +4,7 @@
 		<h3>設定を変更する</h3>
 
 		<%= simple_form_for @setting, url: '/admin_settings', method: :patch do |f| %>
+      <%= f.input :title_setting, placeholder: "タイトル" %>
 			<%= f.input :password, placeholder: "パスワード" %>
 			<%= f.input :admin_password, placeholder: "ログインパスワード" %>
 			<%= f.input :header_text, placeholder: "トップテキスト" %>

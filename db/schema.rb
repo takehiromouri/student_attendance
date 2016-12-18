@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218132046) do
+ActiveRecord::Schema.define(version: 20161218140513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161218132046) do
     t.string   "form_button_color"
     t.string   "form_submit_button_color"
     t.string   "form_button_pressed_color"
+    t.string   "title_setting"
   end
 
   create_table "admins", force: :cascade do |t|

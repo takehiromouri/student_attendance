@@ -36,6 +36,7 @@ ja:
         form_button_color: テンキーボタン色：0-9/消
         form_submit_button_color: テンキーボタン色：入
         form_button_pressed_color: 押したときのボタン色
+        title_setting: タイトル
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
