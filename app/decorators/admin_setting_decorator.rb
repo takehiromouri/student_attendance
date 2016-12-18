@@ -21,4 +21,16 @@ class AdminSettingDecorator < Draper::Decorator
   	object.third_button_color.empty? ? "#da3116" : object.third_button_color
   end
 
+  def form_button_color
+    object.form_button_color.empty? ? "#333333" : object.form_button_color
+  end
+
+  def form_submit_button_color
+    object.form_submit_button_color.empty? ? "#da3116" : object.form_submit_button_color
+  end
+
+  def form_button_pressed_color
+    object.form_button_pressed_color.empty? ? "#2199e8" : object.form_button_pressed_color
+  end
+
 end

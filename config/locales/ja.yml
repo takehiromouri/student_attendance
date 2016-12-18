@@ -25,6 +25,7 @@ ja:
         student: 生徒  
       admin_setting:
         password: ナンバーロック解除パスワード
+        admin_password: ログインパスワード
         header_text: トップテキスト
         footer_text: フッターテキスト
         top_color: トップ色  

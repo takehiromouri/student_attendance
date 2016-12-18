@@ -31,9 +31,15 @@ let AttendanceFormContainer = React.createClass({
 		let form;
 
 		if (this.state.authenticated) {
-			form = <AttendanceForm handleToggleAuthentication={this.handleToggleAuthentication}/>
+			form = <AttendanceForm handleToggleAuthentication={this.handleToggleAuthentication} 
+														 formButtonColor={this.props.formButtonColor} 
+														 formSubmitButtonColor={this.props.formSubmitButtonColor} 
+														 formButtonPressedColor={this.props.formButtonPressedColor}/>
 		} else {
-			form = <AuthenticationForm handleAuthenticated={this.handleAuthenticated} />			
+			form = <AuthenticationForm handleAuthenticated={this.handleAuthenticated} 
+																 formButtonColor={this.props.formButtonColor} 
+																 formSubmitButtonColor={this.props.formSubmitButtonColor} 
+																 formButtonPressedColor={this.props.formButtonPressedColor} />			
 		}
 
 		return (

@@ -20,6 +20,6 @@ class AdminSettingsController < ApplicationController
 	private
 
 	def admin_setting_params
-		params.require(:admin_setting).permit(:password, :footer_text, :header_text, :button_color, :secondary_button_color, :third_button_color, :top_color, :footer_color, :form_button_color, :form_submit_button_color, :form_button_pressed_color)
+		params.require(:admin_setting).permit(:password, :admin_password, :footer_text, :header_text, :button_color, :secondary_button_color, :third_button_color, :top_color, :footer_color, :form_button_color, :form_submit_button_color, :form_button_pressed_color)
 	end
 end

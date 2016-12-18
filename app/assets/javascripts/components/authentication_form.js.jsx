@@ -81,7 +81,12 @@ let AuthenticationForm = React.createClass({
 				  </div>
 				</form>
 
-				<FormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar} handleSubmit={this.handleSubmit}/>
+				<FormButtons handleUpdate={this.handleUpdate} 
+										 handleDeleteChar={this.handleDeleteChar} 
+										 handleSubmit={this.handleSubmit}
+										 formButtonColor={this.props.formButtonColor} 
+										 formSubmitButtonColor={this.props.formSubmitButtonColor} 
+										 formButtonPressedColor={this.props.formButtonPressedColor}/>
 			</div>
 		)
 	}

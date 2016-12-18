@@ -110,7 +110,7 @@ let AttendanceForm = React.createClass({
 				    	<div className="input-group">
 							  <input className="input-group-field" 
 							  			 type="number" 
-							  			 placeholder="学生番号を入力"
+							  			 placeholder="生徒番号を入力"
 							  			 onChange={this.handleChange}
 							  			 value={this.state.studentNumber} />	
 							  <div className="input-group-button">
@@ -124,7 +124,12 @@ let AttendanceForm = React.createClass({
 				  </div>
 				</form>
 
-				<FormButtons handleUpdate={this.handleUpdate} handleDeleteChar={this.handleDeleteChar} handleSubmit={this.handleSubmit}/>
+				<FormButtons handleUpdate={this.handleUpdate} 
+										 handleDeleteChar={this.handleDeleteChar} 
+										 handleSubmit={this.handleSubmit}
+										 formButtonColor={this.props.formButtonColor} 
+										 formSubmitButtonColor={this.props.formSubmitButtonColor} 
+										 formButtonPressedColor={this.props.formButtonPressedColor}/>
 
 				<div className="row">
 					<div className="large-4 large-offset-4 medium-8 medium-offset-2 small-12 columns">			      
