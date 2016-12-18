@@ -32,6 +32,9 @@ ja:
         secondary_button_color: 二番目ボタン色（元々オレンジ）
         third_button_color: 三番目ボタン色（元々赤）
         footer_color: フッター色
+        form_button_color: テンキーボタン色：0-9/消
+        form_submit_button_color: テンキーボタン色：入
+        form_button_pressed_color: 押したときのボタン色
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

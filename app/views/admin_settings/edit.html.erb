@@ -9,15 +9,21 @@
 			<%= f.input :header_text, placeholder: "トップテキスト" %>
 			<%= f.input :footer_text, placeholder: "フッターテキスト" %>	
 			<%= f.input :top_color, as: :minicolors, input_html: {data: {
-          minicolors: {theme: :bootstrap, position: :right}}} %>
+          minicolors: {theme: :bootstrap, position: :right}}}, label: 'トップ色（初期設定：#000000）' %>
 			<%= f.input :button_color, as: :minicolors, input_html: {data: {
-          minicolors: {theme: :bootstrap, position: :right}}} %>		
+          minicolors: {theme: :bootstrap, position: :right}}}, label: 'メインボタン色（初期設定：#2199e8）' %>		
       <%= f.input :secondary_button_color, as: :minicolors, input_html: {data: {
-          minicolors: {theme: :bootstrap, position: :right}}} %>		
+          minicolors: {theme: :bootstrap, position: :right}}}, label: '二番目ボタン色（初期設定：#ffae00）' %>		
       <%= f.input :third_button_color, as: :minicolors, input_html: {data: {
-          minicolors: {theme: :bootstrap, position: :right}}} %>		
+          minicolors: {theme: :bootstrap, position: :right}}}, label: '三番目ボタン色（初期設定：#da3116）' %>		
       <%= f.input :footer_color, as: :minicolors, input_html: {data: {
-          minicolors: {theme: :bootstrap, position: :right}}} %>	
+          minicolors: {theme: :bootstrap, position: :right}}}, label: 'フッター色（初期設定：#000000）' %>	
+      <%= f.input :form_button_color, as: :minicolors, input_html: {data: {
+          minicolors: {theme: :bootstrap, position: :right}}}, label: 'テンキーボタン色：0-9/消（初期設定：#333333）' %>	
+      <%= f.input :form_submit_button_color, as: :minicolors, input_html: {data: {
+          minicolors: {theme: :bootstrap, position: :right}}}, label: 'テンキーボタン色：入（初期設定：#da3116）' %>	
+      <%= f.input :form_button_pressed_color, as: :minicolors, input_html: {data: {
+          minicolors: {theme: :bootstrap, position: :right}}}, label: '押したときのボタン色（初期設定：#2199e8）' %>	
 			<%= f.submit class: 'button float-right' %>
 		<% end %>
 

@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217054153) do
+ActiveRecord::Schema.define(version: 20161218132046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admin_settings", force: :cascade do |t|
     t.text     "footer_text"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "password"
     t.text     "header_text"
     t.string   "button_color"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20161217054153) do
     t.string   "secondary_button_color"
     t.string   "third_button_color"
     t.integer  "admin_password"
+    t.string   "form_button_color"
+    t.string   "form_submit_button_color"
+    t.string   "form_button_pressed_color"
   end
 
   create_table "admins", force: :cascade do |t|
