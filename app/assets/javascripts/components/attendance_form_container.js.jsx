@@ -27,12 +27,19 @@ let AttendanceFormContainer = React.createClass({
 		this.setState({authenticated: false});
 	},
 
+	authenticationToggle(){
+		if(this.state.authenticated) {
+			return <p><small><a onClick={this.handleToggleAuthentication}>認証画面に変える</a></small></p>
+		} else {
+			return <p>{this.props.footer_text}</p>
+		}
+	},
+
 	render(){
 		let form;
 
 		if (this.state.authenticated) {
-			form = <AttendanceForm handleToggleAuthentication={this.handleToggleAuthentication} 
-														 formButtonColor={this.props.formButtonColor} 
+			form = <AttendanceForm formButtonColor={this.props.formButtonColor} 
 														 formSubmitButtonColor={this.props.formSubmitButtonColor} 
 														 formButtonPressedColor={this.props.formButtonPressedColor}/>
 		} else {
@@ -44,8 +51,21 @@ let AttendanceFormContainer = React.createClass({
 
 		return (
 			<div>
+				<div className="row" style={{"marginTop": "50px"}}>
+  				<div className="large-10 large-offset-1 columns">
 							
-				{form}
+						{form}
+
+					</div>
+				</div>
+
+				<footer className="footer text-center">
+					<div className="row">
+						<div className="column medium-6 medium-offset-3">
+							{this.authenticationToggle()}
+						</div>
+					</div>
+				</footer>				
 
 				<AuthenticatedFlash />			
 			</div>

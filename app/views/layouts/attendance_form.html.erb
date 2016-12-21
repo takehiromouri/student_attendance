@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : admin_setting.title_setting %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css" />
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+    <script src="https://wzrd.in/standalone/es7-shim@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript"></script>    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <%= render 'layouts/nav' %>
+      <%= render 'shared/flash_messages' %>
+
+      <%= yield %>
+        
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+
+      <% if admin_setting.button_color %>
+        $(".button").css({"background": "<%= admin_setting.button_color %>"});
+      <% end %>
+
+      <% if admin_setting.secondary_button_color %>
+        $(".button .warning").css({"background": "<%= admin_setting.secondary_button_color %>"});
+      <% end %>
+
+      <% if admin_setting.third_button_color %>
+        $(".button .alert").css({"background": "<%= admin_setting.third_button_color %>"});
+      <% end %>
+
+      <% if admin_setting.top_color %>
+        $(".title-bar").css({"background": "<%= admin_setting.top_color %>"});
+      <% end %>
+
+      <% if admin_setting.footer_color %>
+        $(".footer").css({"background": "<%= admin_setting.footer_color %>"});
+      <% end %>
+    })
+      
+    </script>
+  </body>
+</html>

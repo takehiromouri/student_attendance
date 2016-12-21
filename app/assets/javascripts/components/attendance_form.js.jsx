@@ -131,11 +131,6 @@ let AttendanceForm = React.createClass({
 										 formSubmitButtonColor={this.props.formSubmitButtonColor} 
 										 formButtonPressedColor={this.props.formButtonPressedColor}/>
 
-				<div className="row">
-					<div className="large-4 large-offset-4 medium-8 medium-offset-2 small-12 columns">			      
-						<p className="float-right"><small><a onClick={this.handleToggleAuthentication}>認証画面に変える</a></small></p>
-					</div>
-				</div>
 
 				<Result studentName={this.state.studentName} record={this.state.record} />
 
