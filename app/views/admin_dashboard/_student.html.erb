@@ -3,7 +3,7 @@
 	<ul class="no-bullet">
 		<li><strong>最終記録</strong> <%= student.decorate.last_record %></li>
 		<li><strong>生徒番号</strong> <%= student.student_number %></li>
-		<li><strong>電話番号</strong> <%= student.decorate.phone_link %></li>
+		<li><strong>電話番号</strong> <%= student.phone.empty? ? "無し" : link_to(student.phone, "tel:#{object.phone}") %></li>
 	</ul>
 	
 	<%= link_to '削除', student_path(student), method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: 'button primary btn-delete' %>

@@ -13,10 +13,6 @@ class StudentDecorator < Draper::Decorator
   	object.phone.empty? ? "無し" : object.phone  	
   end
 
-  def phone_link
-  	object.phone.empty? ? "無し" : link_to(object.phone, "tel:#{object.phone}")
-  end
-
   def last_record
   	object.last_attendance_record.created_at.strftime("%m/%d/%Y %l:%M %p")
   end
