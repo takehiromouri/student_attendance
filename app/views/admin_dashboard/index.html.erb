@@ -16,25 +16,19 @@
 
 		  <div class="tabs-panel" id="second_week">
 		    <ul class="no-bullet">
-			    <% @students.unattended_for(weeks: 2).each do |student| %>
-			    	<li>student.last_name + student.first_name</li>
-			    <% end %>
+		    	<%= render partial: 'student', collection: @students.unattended_for(weeks: 2) %>
 		    </ul>
 		  </div>
 
 		  <div class="tabs-panel" id="third_week">
 		    <ul class="no-bullet">
-			    <% @students.unattended_for(weeks: 3).each do |student| %>
-			    	<li>student.last_name + student.first_name</li>
-			    <% end %>
+			    <%= render partial: 'student', collection: @students.unattended_for(weeks: 3) %>
 		    </ul>
 		  </div>
 
 		  <div class="tabs-panel" id="fourth_week">
 		    <ul>
-			    <% @students.unattended_for(weeks: 4).each do |student| %>
-			    	<li>student.last_name + student.first_name</li>
-			    <% end %>
+			    <%= render partial: 'student', collection: @students.unattended_for(weeks: 4) %>
 		    </ul>
 		  </div>
 		</div>
