@@ -6,5 +6,5 @@
 		<li><strong>電話番号</strong> <%= student.phone.empty? ? "無し" : link_to(student.phone, "tel:#{student.phone}") %></li>
 	</ul>
 	
-	<%= link_to '削除', student_path(student), method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: 'button primary btn-delete' %>
+	<%= link_to '削除', admin_student_path(student), method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: 'button primary btn-delete' %>
 </li>
