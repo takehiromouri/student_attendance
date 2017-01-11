@@ -42,11 +42,17 @@ let Day = React.createClass({
 						<i className="fi-yen"></i> <small><a href={`/payment_records/${result.id}`} data-method="delete" data-confirm="本当に削除してよろしいでしょうか？" style={{"marginBottom": "0px"}}>(削除する)</a></small>
 					</div>
 				)
-			} else {
+			} else if (this.props.admin) {
 				return (
 					<button className="button small primary" onClick={() => this.props.handleCreatePaymentRecord(`${this.props.year}-${this.props.month + 1}-${this.props.date}`)}>
 						記録する
 					</button>
+				)
+			} else if (result && !this.props.admin) {
+				return (
+					<div>
+						<i className="fi-yen"></i>
+					</div>
 				)
 			}
 		}
