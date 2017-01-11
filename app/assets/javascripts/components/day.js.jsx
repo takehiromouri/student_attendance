@@ -1,10 +1,4 @@
 let Day = React.createClass({
-	getInitialState() {
-		return {
-
-		}
-	},
-
 	day(){
 		return new Date(this.props.year, this.props.month, this.props.date).getDay();
 	},
@@ -36,6 +30,28 @@ let Day = React.createClass({
 		}
 	},
 
+	paymentRecord(){
+		if (this.props.paymentRecords) {
+			let result = this.props.paymentRecords.find((record) => {
+				return record.created_at_date == `${this.props.month + 1}/${this.props.date}/${this.props.year}`
+			})		
+
+			if (result && this.props.admin) {
+				return (
+					<div>
+						<i className="fi-yen"></i> <small><a href={`/payment_records/${result.id}`} data-method="delete" data-confirm="本当に削除してよろしいでしょうか？" style={{"marginBottom": "0px"}}>(削除する)</a></small>
+					</div>
+				)
+			} else if (this.props.admin) {
+				return (
+					<button className="button small primary" onClick={() => this.props.handleCreatePaymentRecord(`${this.props.year}-${this.props.month + 1}-${this.props.date}`)}>
+						記録する
+					</button>
+				)
+			}
+		}
+	},
+
 	render(){
 		let days = {
 			"0": "日",
@@ -52,6 +68,7 @@ let Day = React.createClass({
 				<td>{this.props.date}</td>
 				<td>{days[this.day()]}</td>
 				<td>{this.attended()}</td>
+				<td>{this.paymentRecord()}</td>
 			</tr>
 		)
 	}

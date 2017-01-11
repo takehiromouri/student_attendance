@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'students/search', to: 'students#search'
   
   resources :attendance_records, only: [:create]
+  resources :payment_records, only: [:create, :destroy]
 
   resources :admin_dashboard, only: :index
 

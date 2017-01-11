@@ -1,4 +1,23 @@
 let AdminStudent = React.createClass({
+	getInitialState() {
+		return {
+			paymentRecords: this.props.student.payment_records
+		}
+	},
+
+	handleCreatePaymentRecord(date){
+		$.ajax({
+			url: '/payment_records.json',
+			type: 'POST',
+			dataType: 'JSON',
+			context: 'this',
+			data: { student_id: this.props.student.id, payment_record: {created_at: date} },
+			success: (data) => {				
+				this.setState({paymentRecords: data});				
+			}
+		})
+	},
+
 	render(){
 		return (
 			<div>
@@ -37,7 +56,7 @@ let AdminStudent = React.createClass({
 				<hr/>
 
 				<h5 className="text-center">出席記録</h5>
-				<Calendar selected={new Date()} admin={true} attendanceRecords={this.props.student.attendance_records}/>
+				<Calendar selected={new Date()} admin={true} attendanceRecords={this.props.student.attendance_records} paymentRecords={this.state.paymentRecords} handleCreatePaymentRecord={this.handleCreatePaymentRecord}/>
 			</div>
 		)
 	}

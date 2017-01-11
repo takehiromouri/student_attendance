@@ -7,7 +7,7 @@ let Calendar = React.createClass({
       day: new Date().getDay()
     };
   },
-
+  
   lastDay(){
     return new Date(this.state.year, this.state.month + 1, 0).getDate();
   },
@@ -22,6 +22,8 @@ let Calendar = React.createClass({
                      year={this.state.year} 
                      month={this.state.month} 
                      attendanceRecords={this.props.attendanceRecords}
+                     paymentRecords={this.props.paymentRecords}
+                     handleCreatePaymentRecord={this.props.handleCreatePaymentRecord}
                      admin={this.props.admin}
                      today={new Date(`${this.state.year}/${this.state.month + 1}/${date} 00:00:00`).toDateString() === new Date().toDateString()}/>)
     }
@@ -62,9 +64,10 @@ let Calendar = React.createClass({
         <table className="responsive">
           <thead>       
             <tr>
-              <th>日付</th>
-              <th>曜日</th>
-              <th>入室時間</th>
+              <th className="medium-3">日付</th>
+              <th className="medium-3">曜日</th>
+              <th className="medium-3">入室時間</th>
+              <th className="medium-3">{this.props.admin ? "月謝記録" : ""}</th>
             </tr>
           </thead>
           <tbody>
