@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
 		end
 	end
 
-	def search		
+	def search
 		if params[:query].try(:empty?)
 			respond_to_empty("検索項目")
 		elsif params[:query]
