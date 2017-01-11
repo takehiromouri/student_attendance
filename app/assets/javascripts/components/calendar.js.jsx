@@ -67,7 +67,7 @@ let Calendar = React.createClass({
               <th className="medium-3">日付</th>
               <th className="medium-3">曜日</th>
               <th className="medium-3">入室時間</th>
-              <th className="medium-3">{this.props.admin ? "月謝記録" : ""}</th>
+              <th className="medium-3">月謝記録</th>
             </tr>
           </thead>
           <tbody>
