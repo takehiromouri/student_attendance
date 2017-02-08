@@ -1,3 +1,3 @@
 Admin.create(first_name: "太郎", last_name: "山本", email: "admin@example.com", password: "password", password_confirmation: "password")
 
-AdminSetting.create(password: 12345, footer_text: "Copyright © 2016 Triangle All rights reserved.", header_text: "")
+AdminSetting.create!(password: 12345, admin_password: 202020, footer_text: "Copyright © 2016 Triangle All rights reserved.", header_text: "", footer_color: "", top_color: "", button_color: "", secondary_button_color: "", third_button_color: "", form_button_color: "", form_submit_button_color: "", form_button_pressed_color: "", title_setting: "")
